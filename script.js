@@ -1,5 +1,5 @@
 /* ══════════════════════════════════════
-   UNIT 2 PRESENTATION ENGINE (simple)
+   UNIT 2 DBMS PRESENTATION ENGINE
    ══════════════════════════════════════ */
 (() => {
   'use strict';
