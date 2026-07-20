@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit 2 — DB System Concepts & Architecture | BSc CSIT · BMC</title>
+<title>Chapter 2 — Database System Concept | BSc CSIT · BMC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
@@ -18,12 +18,12 @@
   <!-- SLIDE 1 · TITLE -->
   <section class="slide title-slide active" data-presenter="All Members" data-title="Cover">
     <div class="title-wrap">
-      <p class="badge-row">BSc CSIT · 5th Semester · Database Management Systems</p>
+      <p class="badge-row">BSc CSIT · 4th Semester · Database Management Systems</p>
       <div class="unit-block">
-        <span class="unit-label">UNIT</span>
+        <span class="unit-label">CHAPTER</span>
         <span class="unit-num">02</span>
       </div>
-      <h1 class="title-main">Database System Concepts &amp; Architecture</h1>
+      <h1 class="title-main">Database System Concept</h1>
       <p class="title-sub">Tribhuvan University · Butwal Multiple Campus (BMC)</p>
       <div class="title-team">
         <span>Santosh</span><span>Saurab</span><span>Kiran</span><span>Roshan</span><span>Bikash</span><span>Tamlal</span>
@@ -36,38 +36,37 @@
     <header class="s-head">
       <p class="kicker">Group Presentation</p>
       <h2>Meet the Team</h2>
-      <p class="s-sub">Six presenters · Six parts · One complete unit</p>
     </header>
-    <div class="team-grid">
-      <article class="member-card" style="--pc:#0e7490">
+    <div class="team-grid-compact">
+      <article class="member-card-compact" style="--pc:#0e7490">
         <span class="m-part">Part 1</span>
         <h3>Santosh Shrestha</h3>
-        <p>Data Models, Schemas &amp; Instances</p>
+        <p>Data Models & Instances vs Schemas</p>
       </article>
-      <article class="member-card" style="--pc:#c2410c">
+      <article class="member-card-compact" style="--pc:#c2410c">
         <span class="m-part">Part 2</span>
         <h3>Saurab Kunwar</h3>
-        <p>Three-Schema Architecture &amp; Data Independence</p>
+        <p>3-Schema Architecture & Data Independence</p>
       </article>
-      <article class="member-card" style="--pc:#047857">
+      <article class="member-card-compact" style="--pc:#047857">
         <span class="m-part">Part 3</span>
-        <h3>Kiran Khatriya</h3>
-        <p>Database Languages (DDL, DML, DCL, TCL) &amp; Interfaces</p>
+        <h3>Kiran Kathariya</h3>
+        <p>DB Languages & Commit vs Rollback</p>
       </article>
-      <article class="member-card" style="--pc:#be123c">
+      <article class="member-card-compact" style="--pc:#be123c">
         <span class="m-part">Part 4</span>
         <h3>Roshan Bhusal</h3>
-        <p>DB System Environment &amp; Centralized Architecture</p>
+        <p>DB Environment & System Structure</p>
       </article>
-      <article class="member-card" style="--pc:#a16207">
+      <article class="member-card-compact" style="--pc:#a16207">
         <span class="m-part">Part 5</span>
         <h3>Bikash Pun</h3>
-        <p>Client-Server Architectures (2-Tier &amp; 3-Tier)</p>
+        <p>Types of Database Systems (2 Slides)</p>
       </article>
-      <article class="member-card" style="--pc:#7e22ce">
+      <article class="member-card-compact" style="--pc:#7e22ce">
         <span class="m-part">Part 6</span>
         <h3>Tamlal Thakur Nau</h3>
-        <p>Classification of DBMS, Unit Summary &amp; TU Exam Focus</p>
+        <p>DBMS Classification & Summary (2 Slides)</p>
       </article>
     </div>
   </section>
@@ -78,68 +77,95 @@
       <span class="ghost">01</span>
       <p class="kicker">Part 1 · Presented by</p>
       <h2 class="presenter-name">Santosh Shrestha</h2>
-      <p class="divider-topic">Data Models, Schemas &amp; Instances</p>
-      <div class="divider-line"></div>
-      <ul class="divider-points">
-        <li>Levels of Data Models</li>
-        <li>Schema vs. Instance</li>
-        <li>Real-world analogy</li>
-      </ul>
+      <p class="divider-topic">Data Models & Instances vs Schemas</p>
     </div>
   </section>
 
   <!-- SLIDE 4 · DATA MODELS -->
   <section class="slide" data-presenter="Santosh Shrestha" data-title="Data Models">
     <header class="s-head">
-      <p class="kicker" style="--pc:#0e7490">Part 1 · Foundations</p>
-      <h2>What is a Data Model?</h2>
+      <p class="kicker" style="--pc:#0e7490">Part 1 · Data Models</p>
+      <h2>Types of Data Models</h2>
     </header>
-    <div class="cols-2">
-      <div class="stack">
-        <div class="panel">
-          <h3>Definition</h3>
-          <p>A collection of conceptual tools for describing <strong>data, data relationships, data semantics, and consistency constraints</strong>.</p>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>What is a Data Model?</strong> A data model is a collection of conceptual tools for describing data, data relationships, data semantics, and consistency constraints. It defines how data is organized, stored, and manipulated in a database system.</p>
+      </div>
+      <div class="two-col-grid">
+        <div class="info-box">
+          <h3>Traditional Models</h3>
+          <ul class="compact-list">
+            <li><strong>Hierarchical Model:</strong> Organizes data in a tree-like structure where each record has one parent and multiple children. Data is accessed through parent-child relationships.<br><em>Example: File system directories, organization chart (CEO → Managers → Employees)</em></li>
+            <li><strong>Network Model:</strong> Extends hierarchical model by allowing many-to-many relationships. Records can have multiple parents, forming a graph structure.<br><em>Example: Social network where users can have multiple friends</em></li>
+            <li><strong>Entity-Relationship (ER) Model:</strong> High-level conceptual model using entities (objects), attributes (properties), and relationships between entities. Used for database design.<br><em>Example: Student entity enrolls in Course entity with Enrollment relationship</em></li>
+          </ul>
         </div>
-        <div class="panel analogy">
-          <h3>💡 Analogy</h3>
-          <p>A data model is like an <strong>architect's blueprint</strong>. It defines how the building (database) will be structured before a single brick (data) is laid.</p>
+        <div class="info-box">
+          <h3>Modern Models</h3>
+          <ul class="compact-list">
+            <li><strong>Relational Model:</strong> Most widely used model. Organizes data into tables (relations) with rows (tuples) and columns (attributes). Uses SQL for queries.<br><em>Example: MySQL, PostgreSQL, Oracle, SQL Server</em></li>
+            <li><strong>Object-Oriented Model:</strong> Represents data as objects (like in OOP programming). Supports inheritance, encapsulation, and complex data types.<br><em>Example: ObjectDB, db4o</em></li>
+            <li><strong>Object-Relational Model:</strong> Combines relational and object-oriented features. Supports complex data types and user-defined functions.<br><em>Example: PostgreSQL with JSON support, Oracle with object extensions</em></li>
+          </ul>
         </div>
       </div>
-      <div class="panel">
-        <p class="panel-tag">Categories of Data Models</p>
-        <ul class="pts">
-          <li><strong>High-Level (Conceptual):</strong> Close to human perception (e.g., Entity-Relationship Model).</li>
-          <li><strong>Implementation (Representational):</strong> Used in commercial DBMS (e.g., Relational Model, Object-Oriented).</li>
-          <li><strong>Low-Level (Physical):</strong> Describes how data is actually stored on disk (e.g., B+ Trees, hashing).</li>
-        </ul>
+      <div class="example-box">
+        <strong>💡 Real-World Application:</strong> A university database uses the <strong>Relational Model</strong> — Students table stores student info, Courses table stores course details, and Enrollment table connects students to courses they're taking.
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 5 · SCHEMA VS INSTANCE -->
-  <section class="slide" data-presenter="Santosh Shrestha" data-title="Schema vs Instance">
+  <!-- SLIDE 5 · INSTANCES AND SCHEMAS -->
+  <section class="slide" data-presenter="Santosh Shrestha" data-title="Instances and Schemas">
     <header class="s-head">
-      <p class="kicker" style="--pc:#0e7490">Part 1 · Foundations</p>
-      <h2>Schema vs. Instance</h2>
+      <p class="kicker" style="--pc:#0e7490">Part 1 · Core Concepts</p>
+      <h2>Schema vs Instance</h2>
     </header>
-    <div class="cols-2">
-      <div class="panel tbl-panel">
-        <table class="tbl">
-          <thead><tr><th>Feature</th><th>Database Schema</th><th>Database Instance</th></tr></thead>
-          <tbody>
-            <tr><td><strong>Definition</strong></td><td>Overall logical design / structure</td><td>Snapshot of data at a specific moment</td></tr>
-            <tr><td><strong>Change Frequency</strong></td><td>Rarely changes (stable)</td><td>Changes frequently (every INSERT/UPDATE)</td></tr>
-            <tr><td><strong>Analogy</strong></td><td>The form / template of a document</td><td>The actual filled-out document</td></tr>
-            <tr><td><strong>Example</strong></td><td><code>Student(ID, Name, Age)</code></td><td><code>(101, 'Ram', 20)</code></td></tr>
-          </tbody>
-        </table>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Understanding Database Structure:</strong> A database has two important aspects — its design (schema) and its current data (instance). The schema defines the structure, while the instance contains the actual data at any given moment.</p>
       </div>
-      <div class="stack">
-        <div class="panel">
-          <h3>Database State</h3>
-          <p>The collection of information stored in the database at a particular moment is called the <strong>state</strong> or <strong>instance</strong>.</p>
+      <div class="comparison-table">
+        <div class="comp-col">
+          <h3>📋 Database Schema (Design)</h3>
+          <p class="definition"><strong>Definition:</strong> The overall logical structure and design of the database. It specifies what data will be stored, the data types, constraints, and relationships between tables.</p>
+          <ul class="compact-list">
+            <li>Defines table structure (columns, data types)</li>
+            <li>Specifies constraints (PRIMARY KEY, FOREIGN KEY)</li>
+            <li>Changes rarely (only when design needs modification)</li>
+            <li>Created by Database Administrator (DBA) or designer</li>
+            <li>Independent of actual data</li>
+          </ul>
+          <div class="code-example">
+            <strong>SQL Example:</strong><br>
+            CREATE TABLE Student (<br>
+            &nbsp;&nbsp;ID INT PRIMARY KEY,<br>
+            &nbsp;&nbsp;Name VARCHAR(50),<br>
+            &nbsp;&nbsp;Age INT,<br>
+            &nbsp;&nbsp;Department VARCHAR(30)<br>
+            );
+          </div>
         </div>
-        <div class="callout">🎓 <strong>TU Exam Tip:</strong> Always draw a small table example when differentiating Schema and Instance to secure full marks.</div>
+        <div class="comp-col">
+          <h3>📊 Database Instance (Data)</h3>
+          <p class="definition"><strong>Definition:</strong> The actual data stored in the database at a specific moment in time. Also called the "state" of the database. Changes with every data operation.</p>
+          <ul class="compact-list">
+            <li>Contains actual records/rows of data</li>
+            <li>Changes frequently with INSERT/UPDATE/DELETE</li>
+            <li>Represents a snapshot of the database</li>
+            <li>Different at different points in time</li>
+            <li>Must conform to the schema constraints</li>
+          </ul>
+          <div class="code-example">
+            <strong>Current Data (Instance):</strong><br>
+            (101, 'Ram Sharma', 20, 'CSIT')<br>
+            (102, 'Sita Thapa', 19, 'BCA')<br>
+            (103, 'Hari Prasad', 21, 'BIM')
+          </div>
+        </div>
+      </div>
+      <div class="example-box">
+        <strong>🎯 Simple Analogy:</strong> Schema = Blank form template with fields | Instance = The filled form with actual student information
       </div>
     </div>
   </section>
@@ -150,37 +176,45 @@
       <span class="ghost">02</span>
       <p class="kicker">Part 2 · Presented by</p>
       <h2 class="presenter-name">Saurab Kunwar</h2>
-      <p class="divider-topic">Three-Schema Architecture &amp; Independence</p>
-      <div class="divider-line"></div>
-      <ul class="divider-points">
-        <li>Internal, Conceptual, External Levels</li>
-        <li>Mappings between levels</li>
-        <li>Logical &amp; Physical Data Independence</li>
-      </ul>
+      <p class="divider-topic">3-Schema Architecture & Data Independence</p>
     </div>
   </section>
 
-  <!-- SLIDE 7 · THREE-SCHEMA ARCHITECTURE -->
+  <!-- SLIDE 7 · DATA ABSTRACTION -->
   <section class="slide" data-presenter="Saurab Kunwar" data-title="Three-Schema Architecture">
     <header class="s-head">
       <p class="kicker" style="--pc:#c2410c">Part 2 · Architecture</p>
       <h2>Three-Schema Architecture</h2>
     </header>
-    <div class="cols-2">
-      <div class="panel">
-        <p>Goal: To separate user applications from the physical database. Achieved via three levels of abstraction:</p>
-        <ul class="pts" style="margin-top:1.5vh">
-          <li><strong>Internal Level:</strong> Physical storage structures, indexes, file organization.</li>
-          <li><strong>Conceptual Level:</strong> Logical structure of the entire database (entities, data types, relationships). Hides physical details.</li>
-          <li><strong>External Level (Views):</strong> Customized views for specific user groups. Hides parts of the conceptual schema.</li>
-        </ul>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Purpose:</strong> The three-schema architecture separates user applications from the physical database. It provides data abstraction by hiding complex storage details from users, making the system easier to use and maintain.</p>
       </div>
-      <div class="panel" style="display:flex;flex-direction:column;gap:8px;justify-content:center">
-        <p class="panel-tag" style="text-align:center">Abstraction Layers</p>
-        <div class="osi-l" style="border-color:#7e22ce; background:#faf5ff"><b>3</b> External Schema (User Views) <span class="tag">◀ Customized</span></div>
-        <div class="osi-l" style="border-color:#c2410c; background:#fff7ed"><b>2</b> Conceptual Schema (Community View) <span class="tag">◀ Logical</span></div>
-        <div class="osi-l hot" style="border-color:#0e7490; background:#f0f9ff"><b>1</b> Internal Schema (Physical Storage) <span class="tag">◀ Hardware</span></div>
-        <div class="callout" style="margin-top:1vh; text-align:center; font-size:11px">Mappings ensure changes in one level don't break others</div>
+      <div class="arch-levels">
+        <div class="arch-level" style="--level-color:#7e22ce">
+          <div class="level-num">3</div>
+          <div class="level-content">
+            <h3>View Level (External Schema)</h3>
+            <p><strong>What users see:</strong> Each user group sees only the data relevant to them. Multiple external views can exist for the same database, hiding sensitive or unnecessary information.</p>
+            <div class="mini-example"><strong>Example:</strong> A student sees only their own grades and attendance. A teacher sees all students in their class. The HR department sees employee salaries. Each has a customized view of the same database.</div>
+          </div>
+        </div>
+        <div class="arch-level" style="--level-color:#c2410c">
+          <div class="level-num">2</div>
+          <div class="level-content">
+            <h3>Logical Level (Conceptual Schema)</h3>
+            <p><strong>What data is stored:</strong> Describes the entire database structure — what entities exist, their attributes, relationships between them, and data types. Hides physical storage details.</p>
+            <div class="mini-example"><strong>Example:</strong> Defines Student table (ID, Name, Age, Department), Course table (CourseID, Title, Credits), and Enrollment relationship connecting students to courses.</div>
+          </div>
+        </div>
+        <div class="arch-level" style="--level-color:#0e7490">
+          <div class="level-num">1</div>
+          <div class="level-content">
+            <h3>Physical Level (Internal Schema)</h3>
+            <p><strong>How data is stored:</strong> Describes low-level storage structures — file organization, indexing methods, data compression, encryption, and access paths. Most complex level.</p>
+            <div class="mini-example"><strong>Example:</strong> Student records stored in B+ tree index on ID field, data compressed using gzip, stored on SSD with 4KB block size, hash index on Department for fast lookup.</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -188,97 +222,167 @@
   <!-- SLIDE 8 · DATA INDEPENDENCE -->
   <section class="slide" data-presenter="Saurab Kunwar" data-title="Data Independence">
     <header class="s-head">
-      <p class="kicker" style="--pc:#c2410c">Part 2 · Architecture</p>
+      <p class="kicker" style="--pc:#c2410c">Part 2 · Independence</p>
       <h2>Data Independence</h2>
     </header>
-    <div class="cols-2">
-      <div class="panel" style="border-top: 4px solid #c2410c">
-        <h3>Logical Data Independence</h3>
-        <p>The capacity to change the <strong>conceptual schema</strong> without having to change <strong>external schemas</strong> or application programs.</p>
-        <div class="chip-row" style="margin-top:1.5vh">
-          <span class="chip good">✓ Add a new field</span>
-          <span class="chip good">✓ Add a new entity</span>
-          <span class="chip bad">✗ Hard to achieve</span>
-        </div>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Why Data Independence Matters:</strong> Data independence is the ability to change the schema at one level without having to change the schema at the next higher level. This protects applications from changes in data storage or structure.</p>
       </div>
-      <div class="panel" style="border-top: 4px solid #0e7490">
-        <h3>Physical Data Independence</h3>
-        <p>The capacity to change the <strong>internal schema</strong> without having to change the <strong>conceptual schema</strong>.</p>
-        <div class="chip-row" style="margin-top:1.5vh">
-          <span class="chip good">✓ Change storage devices</span>
-          <span class="chip good">✓ Create new indexes</span>
-          <span class="chip good">✓ Change file organization</span>
+      <div class="two-col-grid">
+        <div class="info-box highlight-box">
+          <h3>🔧 Physical Data Independence</h3>
+          <p class="definition"><strong>Definition:</strong> The capacity to change the physical schema (how data is stored) without having to change the conceptual schema (logical structure) or application programs.</p>
+          <p><strong>What can be changed:</strong></p>
+          <ul class="compact-list">
+            <li>Switch from HDD to SSD storage</li>
+            <li>Create new indexes for faster queries</li>
+            <li>Change file organization (heap to sorted)</li>
+            <li>Modify data compression methods</li>
+            <li>Change block size or buffer size</li>
+          </ul>
+          <div class="mini-example"><strong>Example:</strong> Adding a B+ tree index on Student.Name to speed up name searches doesn't require changing any application code or logical structure. The database just becomes faster.</div>
+          <p class="difficulty"><strong>Difficulty:</strong> ✅ Easier to achieve (physical changes don't affect logic)</p>
+        </div>
+        <div class="info-box highlight-box">
+          <h3>📐 Logical Data Independence</h3>
+          <p class="definition"><strong>Definition:</strong> The capacity to change the conceptual schema (logical structure) without having to change external schemas (user views) or application programs.</p>
+          <p><strong>What can be changed:</strong></p>
+          <ul class="compact-list">
+            <li>Add new entities or tables</li>
+            <li>Add new attributes to existing entities</li>
+            <li>Modify relationships between entities</li>
+            <li>Change data types or constraints</li>
+            <li>Split or merge tables (with care)</li>
+          </ul>
+          <div class="mini-example"><strong>Example:</strong> Adding an 'Email' field to the Student table doesn't break existing applications that query Student data. They continue working, just ignoring the new field.</div>
+          <p class="difficulty"><strong>Difficulty:</strong> ⚠️ Harder to achieve (structural changes may affect views)</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SLIDE 9 · PART 3 DIVIDER -->
-  <section class="slide divider" data-presenter="Kiran Khatriya" data-title="Part 3 · Kiran Khatriya">
+  <section class="slide divider" data-presenter="Kiran Kathariya" data-title="Part 3 · Kiran Kathariya">
     <div class="divider-inner" style="--pc:#047857">
       <span class="ghost">03</span>
       <p class="kicker">Part 3 · Presented by</p>
-      <h2 class="presenter-name">Kiran Khatriya</h2>
-      <p class="divider-topic">Database Languages &amp; Interfaces</p>
-      <div class="divider-line"></div>
-      <ul class="divider-points">
-        <li>DDL, DML, DCL, TCL</li>
-        <li>Host languages vs Standalone</li>
-        <li>Types of Database Interfaces</li>
-      </ul>
+      <h2 class="presenter-name">Kiran Kathariya</h2>
+      <p class="divider-topic">Database Languages & Commit vs Rollback</p>
     </div>
   </section>
 
   <!-- SLIDE 10 · DATABASE LANGUAGES -->
-  <section class="slide" data-presenter="Kiran Khatriya" data-title="Database Languages">
+  <section class="slide" data-presenter="Kiran Kathariya" data-title="Database Languages">
     <header class="s-head">
       <p class="kicker" style="--pc:#047857">Part 3 · Languages</p>
       <h2>Database Languages (SQL Sublanguages)</h2>
     </header>
-    <div class="func-grid" style="grid-template-columns: repeat(2, 1fr);">
-      <div class="func-tile" style="border-left: 4px solid #047857">
-        <span class="f-ico">🏗</span><h3>DDL (Data Definition)</h3>
-        <p>Defines the database structure/schema. <br><strong>Commands:</strong> CREATE, ALTER, DROP, TRUNCATE</p>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Database Languages:</strong> DBMS provides specialized languages for different database operations. SQL (Structured Query Language) is divided into four sublanguages, each serving a specific purpose in database management.</p>
       </div>
-      <div class="func-tile" style="border-left: 4px solid #0e7490">
-        <span class="f-ico">📝</span><h3>DML (Data Manipulation)</h3>
-        <p>Manages data within schema objects. <br><strong>Commands:</strong> SELECT, INSERT, UPDATE, DELETE</p>
-      </div>
-      <div class="func-tile" style="border-left: 4px solid #a16207">
-        <span class="f-ico">🔒</span><h3>DCL (Data Control)</h3>
-        <p>Controls access to data in the database. <br><strong>Commands:</strong> GRANT, REVOKE</p>
-      </div>
-      <div class="func-tile" style="border-left: 4px solid #be123c">
-        <span class="f-ico">🔄</span><h3>TCL (Transaction Control)</h3>
-        <p>Manages changes made by DML statements. <br><strong>Commands:</strong> COMMIT, ROLLBACK, SAVEPOINT</p>
+      <div class="lang-grid">
+        <div class="lang-card">
+          <div class="lang-icon">🏗️</div>
+          <h3>DDL</h3>
+          <p class="lang-full"><strong>Data Definition Language</strong></p>
+          <p class="lang-desc">Defines and modifies database structure (schema). Used to create, alter, and drop database objects like tables, indexes, and views.</p>
+          <div class="code-snippet">
+            CREATE TABLE<br>
+            ALTER TABLE<br>
+            DROP TABLE<br>
+            CREATE INDEX<br>
+            TRUNCATE TABLE
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-icon">📝</div>
+          <h3>DML</h3>
+          <p class="lang-full"><strong>Data Manipulation Language</strong></p>
+          <p class="lang-desc">Manages data within database objects. Used to retrieve, insert, update, and delete actual data records.</p>
+          <div class="code-snippet">
+            SELECT (retrieve)<br>
+            INSERT (add)<br>
+            UPDATE (modify)<br>
+            DELETE (remove)
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-icon">🔒</div>
+          <h3>DCL</h3>
+          <p class="lang-full"><strong>Data Control Language</strong></p>
+          <p class="lang-desc">Controls access to data and permissions. Used to grant or revoke privileges to users and manage security.</p>
+          <div class="code-snippet">
+            GRANT (give access)<br>
+            REVOKE (remove access)
+          </div>
+        </div>
+        <div class="lang-card">
+          <div class="lang-icon">🔄</div>
+          <h3>TCL</h3>
+          <p class="lang-full"><strong>Transaction Control Language</strong></p>
+          <p class="lang-desc">Manages transactions and ensures data consistency. Controls changes made by DML statements and handles recovery.</p>
+          <div class="code-snippet">
+            COMMIT (save)<br>
+            ROLLBACK (undo)<br>
+            SAVEPOINT (checkpoint)
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 11 · DATABASE INTERFACES -->
-  <section class="slide" data-presenter="Kiran Khatriya" data-title="Database Interfaces">
+  <!-- SLIDE 11 · COMMIT VS ROLLBACK -->
+  <section class="slide" data-presenter="Kiran Kathariya" data-title="Commit vs Rollback">
     <header class="s-head">
-      <p class="kicker" style="--pc:#047857">Part 3 · Interfaces</p>
-      <h2>Database Interfaces</h2>
+      <p class="kicker" style="--pc:#047857">Part 3 · Transactions</p>
+      <h2>COMMIT vs ROLLBACK</h2>
     </header>
-    <div class="cols-2">
-      <div class="panel">
-        <h3>Types of Interfaces</h3>
-        <ul class="pts">
-          <li><strong>Menu-Based (Forms):</strong> For browsing/standalone users (e.g., ATM screens).</li>
-          <li><strong>Graphical (GUI):</strong> Visual representation of schema (e.g., MySQL Workbench).</li>
-          <li><strong>Natural Language:</strong> Accepts English-like queries (requires complex parsing).</li>
-          <li><strong>Parametric:**</strong> Restricted interfaces for bank tellers or reservation agents.</li>
-        </ul>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Transaction Management:</strong> A transaction is a sequence of operations performed as a single logical unit of work. COMMIT and ROLLBACK are TCL commands that control whether changes are permanently saved or discarded.</p>
       </div>
-      <div class="panel">
-        <h3>DBMS Interfaces in Code</h3>
-        <ul class="pts">
-          <li><strong>Application Program Interface (API):</strong> ODBC, JDBC, PDO.</li>
-          <li><strong>Embedded SQL:</strong> SQL statements embedded in host languages (C, Java, Python).</li>
-          <li><strong>Dynamic SQL:</strong> SQL queries constructed and executed at runtime.</li>
-        </ul>
-        <div class="callout" style="margin-top:1.5vh">Modern apps rarely use raw SQL directly; they use ORMs (Object-Relational Mappers) like Prisma or Hibernate.</div>
+      <div class="comparison-table">
+        <div class="comp-col success-col">
+          <h3>✅ COMMIT Command</h3>
+          <p class="definition"><strong>Purpose:</strong> Permanently saves all changes made during the current transaction to the database.</p>
+          <ul class="compact-list">
+            <li>Makes all changes permanent and visible to other users</li>
+            <li>Cannot be undone after execution</li>
+            <li>Writes changes to disk (durability)</li>
+            <li>Releases locks held by the transaction</li>
+            <li>Ends the current transaction</li>
+          </ul>
+          <div class="code-example">
+            <strong>Example - Bank Transfer:</strong><br>
+            BEGIN TRANSACTION;<br>
+            UPDATE Account SET balance = balance - 1000 WHERE id = 1;<br>
+            UPDATE Account SET balance = balance + 1000 WHERE id = 2;<br>
+            <span style="color:#047857; font-weight:bold">COMMIT;</span> ← Money transferred permanently
+          </div>
+        </div>
+        <div class="comp-col danger-col">
+          <h3>↩️ ROLLBACK Command</h3>
+          <p class="definition"><strong>Purpose:</strong> Undoes all changes made during the current transaction, restoring the database to its previous state.</p>
+          <ul class="compact-list">
+            <li>Cancels all uncommitted changes</li>
+            <li>Restores database to last COMMIT point</li>
+            <li>Used when errors occur or logic fails</li>
+            <li>Maintains data consistency (ACID property)</li>
+            <li>Releases locks and ends transaction</li>
+          </ul>
+          <div class="code-example">
+            <strong>Example - Error Handling:</strong><br>
+            BEGIN TRANSACTION;<br>
+            UPDATE Account SET balance = balance - 1000 WHERE id = 1;<br>
+            -- Error: Account 2 doesn't exist!<br>
+            <span style="color:#be1239; font-weight:bold">ROLLBACK;</span> ← Money returned to Account 1
+          </div>
+        </div>
+      </div>
+      <div class="example-box">
+        <strong>💡 Real-World Scenario:</strong> When you transfer money online, the system: (1) Deducts from your account, (2) Adds to recipient's account. If step 2 fails (network error, invalid account), ROLLBACK ensures your money isn't lost. Only COMMIT after both steps succeed.
       </div>
     </div>
   </section>
@@ -289,76 +393,83 @@
       <span class="ghost">04</span>
       <p class="kicker">Part 4 · Presented by</p>
       <h2 class="presenter-name">Roshan Bhusal</h2>
-      <p class="divider-topic">DB System Environment &amp; Centralized Arch</p>
-      <div class="divider-line"></div>
-      <ul class="divider-points">
-        <li>Components of DB Environment</li>
-        <li>Centralized DBMS Architecture</li>
-        <li>Pros &amp; Cons</li>
-      </ul>
+      <p class="divider-topic">DB System Environment & Structure</p>
     </div>
   </section>
 
-  <!-- SLIDE 13 · SYSTEM ENVIRONMENT -->
+  <!-- SLIDE 13 · DB SYSTEM ENVIRONMENT -->
   <section class="slide" data-presenter="Roshan Bhusal" data-title="DB System Environment">
     <header class="s-head">
       <p class="kicker" style="--pc:#be123c">Part 4 · Environment</p>
       <h2>Database System Environment</h2>
     </header>
-    <div class="cols-3" style="grid-template-columns: repeat(3, 1fr);">
-      <div class="panel mini-panel">
-        <h3>🖥 Hardware</h3>
-        <p>Secondary storage (HDD/SSD), primary memory (RAM), processors, and networking equipment.</p>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Complete Database Ecosystem:</strong> A database system is not just software — it's a complete environment consisting of five major components that work together to store, manage, and provide access to data.</p>
       </div>
-      <div class="panel mini-panel">
-        <h3>💻 Software</h3>
-        <p>The DBMS software itself, the Operating System, network software, and application programs.</p>
-      </div>
-      <div class="panel mini-panel">
-        <h3>👥 People</h3>
-        <p>DBA, Database Designers, Application Programmers, and End Users (Naïve to Sophisticated).</p>
-      </div>
-      <div class="panel mini-panel">
-        <h3>📊 Data</h3>
-        <p>The actual operational data and metadata (data dictionary) that acts as the bridge between components.</p>
-      </div>
-      <div class="panel mini-panel">
-        <h3>📜 Procedures</h3>
-        <p>Instructions and rules governing the design, use, and maintenance of the database (e.g., backup routines).</p>
+      <div class="env-grid">
+        <div class="env-item">
+          <div class="env-icon">🖥️</div>
+          <h3>Hardware</h3>
+          <p class="env-desc">Physical devices required to store and process data. Includes secondary storage (HDD/SSD for data files), primary memory (RAM for caching), processors (CPU for query execution), and network devices for client-server communication.</p>
+        </div>
+        <div class="env-item">
+          <div class="env-icon">💻</div>
+          <h3>Software</h3>
+          <p class="env-desc">Programs that manage the database. Includes the DBMS itself (MySQL, PostgreSQL, Oracle), the operating system (Windows, Linux), application programs that access the database, and network software for distributed systems.</p>
+        </div>
+        <div class="env-item">
+          <div class="env-icon"></div>
+          <h3>People</h3>
+          <p class="env-desc">Users who interact with the database system. Includes Database Administrators (DBA) who manage the system, Database Designers who create the schema, Application Programmers who write code, and End Users who query the data.</p>
+        </div>
+        <div class="env-item">
+          <div class="env-icon"></div>
+          <h3>Data</h3>
+          <p class="env-desc">The most important component — the actual information stored. Includes operational data (student records, transactions) and metadata (data about data, stored in data dictionary/catalog describing structure and constraints).</p>
+        </div>
+        <div class="env-item">
+          <div class="env-icon">📜</div>
+          <h3>Procedures</h3>
+          <p class="env-desc">Instructions and rules for using the database system. Includes installation procedures, backup and recovery routines, security policies, user manuals, and guidelines for database design and maintenance.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 14 · CENTRALIZED ARCHITECTURE -->
-  <section class="slide" data-presenter="Roshan Bhusal" data-title="Centralized Architecture">
+  <!-- SLIDE 14 · DB SYSTEM STRUCTURE -->
+  <section class="slide" data-presenter="Roshan Bhusal" data-title="DB System Structure">
     <header class="s-head">
-      <p class="kicker" style="--pc:#be123c">Part 4 · Architecture</p>
-      <h2>Centralized DBMS Architecture</h2>
+      <p class="kicker" style="--pc:#be123c">Part 4 · Structure</p>
+      <h2>Database System Structure</h2>
     </header>
-    <div class="cols-2">
-      <div class="panel">
-        <h3>How it Works</h3>
-        <p>A single computer system (mainframe or powerful server) houses the <strong>entire DBMS, application programs, and user interfaces</strong>. Users access it via "dumb terminals" that only provide display and keyboard input.</p>
-        <div class="chip-row" style="margin-top:1.5vh">
-          <span class="chip good">✓ Simple to manage</span>
-          <span class="chip good">✓ High security (centralized)</span>
-          <span class="chip bad">✗ Single point of failure</span>
-          <span class="chip bad">✗ Poor scalability</span>
-          <span class="chip bad">✗ High network latency for remote users</span>
-        </div>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Internal Components:</strong> The DBMS has two major functional components that work together — the Storage Manager handles low-level data storage and retrieval, while the Query Processor translates and executes high-level queries from users.</p>
       </div>
-      <div class="panel" style="display:flex;align-items:center;justify-content:center; background:#f8fafc">
-        <div style="text-align:center">
-          <div style="font-size:48px; margin-bottom:10px">🖥</div>
-          <p style="font-weight:700; color:var(--ink)">Central Mainframe</p>
-          <p style="font-size:12px; color:var(--muted)">(DBMS + Apps + Data)</p>
-          <div style="margin:15px 0; height:2px; background:var(--line); width:100px; margin-left:auto; margin-right:auto"></div>
-          <div style="display:flex; gap:15px; justify-content:center">
-            <span style="font-size:24px">⌨️</span>
-            <span style="font-size:24px">⌨️</span>
-            <span style="font-size:24px">⌨️</span>
-          </div>
-          <p style="font-size:12px; color:var(--muted); margin-top:5px">Dumb Terminals</p>
+      <div class="two-col-grid">
+        <div class="info-box">
+          <h3>⚙️ Storage Manager</h3>
+          <p class="component-desc"><strong>Role:</strong> Acts as an interface between low-level data stored in files and application programs. Responsible for storing, retrieving, and updating data on disk while ensuring efficiency and consistency.</p>
+          <p><strong>Key Components:</strong></p>
+          <ul class="compact-list">
+            <li><strong>Authorization & Integrity Manager:</strong> Checks user permissions and enforces constraints (PRIMARY KEY, FOREIGN KEY) before allowing operations</li>
+            <li><strong>Transaction Manager:</strong> Ensures database remains consistent despite system failures. Implements ACID properties through locking and logging</li>
+            <li><strong>File Manager:</strong> Manages disk space allocation, organizes data into files and blocks, handles data structures like B+ trees</li>
+            <li><strong>Buffer Manager:</strong> Caches frequently accessed data in RAM (buffer pool) to reduce disk I/O and improve performance</li>
+          </ul>
+          <div class="mini-example"><strong>Example:</strong> When you run SELECT * FROM Student, the buffer manager checks if Student data is in RAM. If not, file manager reads it from disk into buffer for fast access.</div>
+        </div>
+        <div class="info-box">
+          <h3>🔍 Query Processor</h3>
+          <p class="component-desc"><strong>Role:</strong> Translates high-level SQL queries into low-level instructions that the storage manager can execute. Optimizes queries for best performance.</p>
+          <p><strong>Key Components:</strong></p>
+          <ul class="compact-list">
+            <li><strong>DDL Interpreter:</strong> Processes DDL statements (CREATE, ALTER, DROP) and records metadata in the data dictionary/catalog</li>
+            <li><strong>DML Compiler:</strong> Translates DML queries (SELECT, INSERT) into an evaluation plan — a sequence of low-level operations. Includes query optimization to choose the fastest execution method</li>
+            <li><strong>Query Evaluation Engine:</strong> Executes the low-level instructions generated by the DML compiler, coordinating with storage manager to fetch/modify data</li>
+          </ul>
+          <div class="mini-example"><strong>Example:</strong> SELECT * FROM Student WHERE Age > 20 → DML Compiler creates plan: "Use Age index → Fetch matching records" → Evaluation Engine executes the plan</div>
         </div>
       </div>
     </div>
@@ -370,72 +481,82 @@
       <span class="ghost">05</span>
       <p class="kicker">Part 5 · Presented by</p>
       <h2 class="presenter-name">Bikash Pun</h2>
-      <p class="divider-topic">Client-Server Architectures</p>
-      <div class="divider-line"></div>
-      <ul class="divider-points">
-        <li>Two-Tier Architecture</li>
-        <li>Three-Tier Architecture</li>
-        <li>Comparison &amp; Modern Use Cases</li>
-      </ul>
+      <p class="divider-topic">Types of Database Systems</p>
     </div>
   </section>
 
-  <!-- SLIDE 16 · 2-TIER VS 3-TIER -->
-  <section class="slide" data-presenter="Bikash Pun" data-title="2-Tier vs 3-Tier Architecture">
+  <!-- SLIDE 16 · TYPES OF DB SYSTEMS (PART 1) -->
+  <section class="slide" data-presenter="Bikash Pun" data-title="Types of DB Systems: Centralized & PC">
     <header class="s-head">
-      <p class="kicker" style="--pc:#a16207">Part 5 · Client-Server</p>
-      <h2>Two-Tier vs. Three-Tier Architecture</h2>
+      <p class="kicker" style="--pc:#a16207">Part 5 · System Types (1/2)</p>
+      <h2>Centralized & Personal Computer Databases</h2>
     </header>
-    <div class="cols-2">
-      <div class="panel" style="border-top: 4px solid #a16207">
-        <h3>Two-Tier (Fat Client)</h3>
-        <ul class="pts">
-          <li><strong>Tier 1 (Client):</strong> UI + Application Logic + DB API.</li>
-          <li><strong>Tier 2 (Server):</strong> Database Engine.</li>
-          <li>Client connects <em>directly</em> to the DB.</li>
-        </ul>
-        <div class="chip-row">
-          <span class="chip good">✓ Faster for small LANs</span>
-          <span class="chip bad">✗ Security risk (DB credentials on client)</span>
-          <span class="chip bad">✗ High maintenance (update every client)</span>
-        </div>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Single-Location Systems:</strong> These database architectures keep all data and processing in one place. They are simpler to manage but have limitations in scalability and fault tolerance.</p>
       </div>
-      <div class="panel" style="border-top: 4px solid #047857">
-        <h3>Three-Tier (Thin Client) ★</h3>
-        <ul class="pts">
-          <li><strong>Tier 1 (Client):</strong> UI only (Browser/Mobile App).</li>
-          <li><strong>Tier 2 (App Server):</strong> Business logic & processing.</li>
-          <li><strong>Tier 3 (DB Server):</strong> Data storage & retrieval.</li>
-        </ul>
-        <div class="chip-row">
-          <span class="chip good">✓ Highly secure</span>
-          <span class="chip good">✓ Scalable & easy to maintain</span>
-          <span class="chip good">✓ Standard for modern web apps</span>
+      <div class="two-col-grid">
+        <div class="info-box">
+          <h3>🏢 Centralized Database</h3>
+          <p class="component-desc"><strong>Architecture:</strong> All data is stored, maintained, and accessed from a single physical location (mainframe or powerful central server). Users connect via terminals or a local network.</p>
+          <div class="mini-example"><strong>Example:</strong> A university's central database server where all student records, faculty data, and course information are stored. All campus departments access this single server.</div>
+          <div class="pros-cons" style="margin-top: 12px;">
+            <span class="pros">✓ Easy to manage, maintain, and secure</span>
+            <span class="pros">✓ No data redundancy or synchronization issues</span>
+            <span class="cons">✗ Single point of failure (if server dies, everything stops)</span>
+            <span class="cons">✗ Poor scalability and potential network bottlenecks</span>
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>💻 Personal Computer (PC) Database</h3>
+          <p class="component-desc"><strong>Architecture:</strong> The entire DBMS, application software, and data files reside on a single personal computer. Designed specifically for single-user access with limited data volume.</p>
+          <div class="mini-example"><strong>Example:</strong> An MS Access database on your laptop to track personal expenses, or a local SQLite database for a small desktop inventory application.</div>
+          <div class="pros-cons" style="margin-top: 12px;">
+            <span class="pros">✓ Very simple, inexpensive, and easy to install</span>
+            <span class="pros">✓ No network connection required to function</span>
+            <span class="cons">✗ Strictly single-user (no concurrent access)</span>
+            <span class="cons">✗ Limited data capacity and processing power</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 17 · 3-TIER VISUAL -->
-  <section class="slide" data-presenter="Bikash Pun" data-title="3-Tier Visualized">
+  <!-- SLIDE 17 · TYPES OF DB SYSTEMS (PART 2) -->
+  <section class="slide" data-presenter="Bikash Pun" data-title="Types of DB Systems: Client/Server & Distributed">
     <header class="s-head">
-      <p class="kicker" style="--pc:#a16207">Part 5 · Client-Server</p>
-      <h2>Anatomy of a 3-Tier System</h2>
+      <p class="kicker" style="--pc:#a16207">Part 5 · System Types (2/2)</p>
+      <h2>Client/Server & Distributed Databases</h2>
     </header>
-    <div class="panel" style="display:flex; flex-direction:column; gap:15px; padding:2vh 2vw">
-      <div style="display:flex; justify-content:space-around; align-items:center; background:#f0f9ff; padding:1.5vh; border-radius:8px; border:1px solid #bae6fd">
-        <div style="text-align:center"><div style="font-size:32px">💻 📱</div><p style="font-weight:600; font-size:14px; margin-top:5px">Presentation Tier</p><p style="font-size:11px; color:var(--muted)">HTML/CSS, React, Flutter</p></div>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Distributed Processing Systems:</strong> These architectures split the workload across multiple machines, offering better scalability, performance, and reliability for modern, large-scale applications.</p>
       </div>
-      <div style="text-align:center; color:var(--muted); font-size:24px">⇅ HTTP / REST API / gRPC ⇅</div the middle>
-      <div style="display:flex; justify-content:space-around; align-items:center; background:#fff7ed; padding:1.5vh; border-radius:8px; border:1px solid #fed7aa">
-        <div style="text-align:center"><div style="font-size:32px">⚙️</div><p style="font-weight:600; font-size:14px; margin-top:5px">Application (Logic) Tier</p><p style="font-size:11px; color:var(--muted)">Node.js, Python, Java, PHP</p></div>
-      </div>
-      <div style="text-align:center; color:var(--muted); font-size:24px">⇅ SQL / Database Protocol ⇅</div>
-      <div style="display:flex; justify-content:space-around; align-items:center; background:#f0fdf4; padding:1.5vh; border-radius:8px; border:1px solid #bbf7d0">
-        <div style="text-align:center"><div style="font-size:32px">🗄️</div><p style="font-weight:600; font-size:14px; margin-top:5px">Data (Database) Tier</p><p style="font-size:11px; color:var(--muted)">MySQL, PostgreSQL, MongoDB</p></div>
+      <div class="two-col-grid">
+        <div class="info-box">
+          <h3>🌐 Client/Server Database</h3>
+          <p class="component-desc"><strong>Architecture:</strong> Processing is distributed. Client machines handle the user interface and application logic, while the central server manages data storage, query processing, and transaction management.</p>
+          <div class="mini-example"><strong>Example:</strong> An e-commerce website where your browser (client) sends requests to a web server, which then queries a MySQL database server to fetch product info and process your order.</div>
+          <div class="pros-cons" style="margin-top: 12px;">
+            <span class="pros">✓ Highly scalable and better security (credentials stay on server)</span>
+            <span class="pros">✓ Centralized data management with distributed processing</span>
+            <span class="cons">✗ Heavy network dependency</span>
+            <span class="cons">✗ Server can become a bottleneck under heavy load</span>
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>🔗 Distributed Database (DDBMS)</h3>
+          <p class="component-desc"><strong>Architecture:</strong> A single logical database is physically fragmented and stored across multiple computers at different geographic locations, connected via a network. Appears as one system to the user.</p>
+          <div class="mini-example"><strong>Example:</strong> A global bank with branches in Kathmandu, Pokhara, and Butwal. Each branch has a local database, but all are synchronized. A customer can access their account from any branch.</div>
+          <div class="pros-cons" style="margin-top: 12px;">
+            <span class="pros">✓ High availability, reliability, and modular growth</span>
+            <span class="pros">✓ Better performance due to local data access</span>
+            <span class="cons">✗ Very complex data synchronization and concurrency control</span>
+            <span class="cons">✗ Expensive infrastructure and security challenges</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="callout" style="margin-top:2vh">🎓 <strong>TU Exam Focus:</strong> Always mention that the 3-tier architecture introduces an "Application Server" to decouple business logic from the database, enhancing security and scalability.</div>
   </section>
 
   <!-- SLIDE 18 · PART 6 DIVIDER -->
@@ -444,13 +565,7 @@
       <span class="ghost">06</span>
       <p class="kicker">Part 6 · Presented by</p>
       <h2 class="presenter-name">Tamlal Thakur Nau</h2>
-      <p class="divider-topic">Classification, Summary &amp; TU Exam Focus</p>
-      <div class="divider-line"></div>
-      <ul class="divider-points">
-        <li>Classification of DBMS</li>
-        <li>Unit Summary</li>
-        <li>Important TU Questions</li>
-      </ul>
+      <p class="divider-topic">DBMS Classification & Chapter Summary</p>
     </div>
   </section>
 
@@ -458,69 +573,145 @@
   <section class="slide" data-presenter="Tamlal Thakur Nau" data-title="Classification of DBMS">
     <header class="s-head">
       <p class="kicker" style="--pc:#7e22ce">Part 6 · Classification</p>
-      <h2>Classification of Database Systems</h2>
+      <h2>Classification of Database Management Systems</h2>
     </header>
-    <div class="cols-2">
-      <div class="panel">
-        <h3>By Data Model</h3>
-        <ul class="pts">
-          <li>Relational (SQL)</li>
-          <li>Object-Oriented (OODBMS)</li>
-          <li>NoSQL (Document, Key-Value, Graph)</li>
-          <li>Hierarchical & Network (Legacy)</li>
-        </ul>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>DBMS Categories:</strong> Database Management Systems can be classified in three main ways — by the data model they use, by the number of users they support, and by how the database is distributed across locations.</p>
       </div>
-      <div class="panel">
-        <h3>By Number of Users</h3>
-        <ul class="pts">
-          <li><strong>Single-user:</strong> Desktop DB (e.g., MS Access)</li>
-          <li><strong>Multi-user:</strong> Enterprise DB (e.g., Oracle, PostgreSQL)</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>By Site Distribution</h3>
-        <ul class="pts">
-          <li><strong>Centralized:</strong> Single location</li>
-          <li><strong>Distributed:</strong> Data spread across multiple networked sites</li>
-          <li><strong>Cloud:</strong> DBaaS (Database as a Service)</li>
-        </ul>
-      </div>
-      <div class="panel">
-        <h3>By Purpose</h3>
-        <ul class="pts">
-          <li><strong>OLTP:</strong> Online Transaction Processing (Day-to-day ops)</li>
-          <li><strong>OLAP:</strong> Online Analytical Processing (Data warehousing, BI)</li>
-        </ul>
+      <div class="class-grid">
+        <div class="class-box">
+          <h3>📊 Based on Data Model</h3>
+          <p class="class-desc"><strong>Classification by how data is organized and structured:</strong></p>
+          <ul class="compact-list">
+            <li><strong>Relational DBMS (RDBMS):</strong> Uses tables with rows and columns. Most popular today.<br><em>Examples: MySQL, PostgreSQL, Oracle, SQL Server</em></li>
+            <li><strong>Hierarchical DBMS:</strong> Tree structure with parent-child relationships. Legacy systems.<br><em>Example: IBM IMS</em></li>
+            <li><strong>Network DBMS:</strong> Graph structure allowing many-to-many. Legacy systems.<br><em>Example: IDMS</em></li>
+            <li><strong>Object-Oriented DBMS:</strong> Stores data as objects with methods.<br><em>Example: ObjectDB</em></li>
+            <li><strong>NoSQL DBMS:</strong> Non-relational, flexible schema for big data.<br><em>Examples: MongoDB, Cassandra, Redis</em></li>
+          </ul>
+        </div>
+        <div class="class-box">
+          <h3>👥 Based on User Numbers</h3>
+          <p class="class-desc"><strong>Classification by concurrent user support:</strong></p>
+          <ul class="compact-list">
+            <li><strong>Single-User DBMS:</strong>
+              <ul class="sub-list">
+                <li>Supports only one user at a time</li>
+                <li>Typically runs on personal computers</li>
+                <li>Used for individual, lightweight applications</li>
+              </ul>
+              <em>Examples: MS Access, SQLite (single-user mode)</em>
+            </li>
+            <li><strong>Multi-User DBMS:</strong>
+              <ul class="sub-list">
+                <li>Supports multiple concurrent users</li>
+                <li>Provides advanced concurrency control & locking</li>
+                <li>Used in enterprise and web environments</li>
+              </ul>
+              <em>Examples: Oracle, MySQL, PostgreSQL, SQL Server</em>
+            </li>
+          </ul>
+        </div>
+        <div class="class-box">
+          <h3>🌍 Based on Distribution</h3>
+          <p class="class-desc"><strong>Classification by physical location of data:</strong></p>
+          <ul class="compact-list">
+            <li><strong>Centralized DBMS:</strong>
+              <ul class="sub-list">
+                <li>All data stored at a single physical location</li>
+                <li>Single database server for all users</li>
+                <li>Easier to manage, backup, and secure</li>
+              </ul>
+              <em>Example: Small business with one local server</em>
+            </li>
+            <li><strong>Distributed DBMS (DDBMS):</strong>
+              <ul class="sub-list">
+                <li>Data spread across multiple networked sites</li>
+                <li>Each site has local autonomy and control</li>
+                <li>Appears as a single logical database to users</li>
+              </ul>
+              <em>Example: Multinational corporation with global offices</em>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SLIDE 20 · SUMMARY & TU FOCUS -->
-  <section class="slide" data-presenter="Tamlal Thakur Nau" data-title="Summary & TU Exam Focus">
+  <!-- SLIDE 20 · SUMMARY -->
+  <section class="slide" data-presenter="Tamlal Thakur Nau" data-title="Chapter Summary">
     <header class="s-head">
-      <p class="kicker" style="--pc:#7e22ce">Part 6 · Wrap-Up</p>
-      <h2>Unit 2 Summary &amp; TU Exam Focus</h2>
+      <p class="kicker" style="--pc:#7e22ce">Part 6 · Summary</p>
+      <h2>Chapter 2 — Key Takeaways</h2>
     </header>
-    <div class="sum-grid">
-      <div class="sum-tile"><span>1</span><p><strong>Schema vs Instance:</strong> Schema is the design; Instance is the data at a moment in time.</p></div>
-      <div class="sum-tile"><span>2</span><p><strong>3-Schema Arch:</strong> Internal, Conceptual, External. Goal = Data Independence.</p></div>
-      <div class="sum-tile"><span>3</span><p><strong>Data Independence:</strong> Physical (easier) vs. Logical (harder). Highly tested in TU.</p></div>
-      <div class="sum-tile"><span>4</span><p><strong>Languages:</strong> Know the difference between DDL, DML, DCL, and TCL with 2 examples each.</p></div>
-      <div class="sum-tile"><span>5</span><p><strong>Architecture:</strong> 3-Tier is the industry standard. Be ready to draw its diagram.</p></div>
+    <div class="content-compact">
+      <div class="intro-box">
+        <p><strong>Chapter Overview:</strong> This chapter covered the fundamental concepts of database systems, from data models and architecture to languages and system types. These concepts form the foundation for understanding how modern databases work.</p>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <span class="sum-num">1</span>
+          <div>
+            <p><strong>Data Models:</strong> Define how data is structured. Relational model (tables) is most widely used today. Traditional models (hierarchical, network) are legacy systems.</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="sum-num">2</span>
+          <div>
+            <p><strong>Schema vs Instance:</strong> Schema is the database design/structure (rarely changes). Instance is the actual data at a moment in time (changes frequently with operations).</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="sum-num">3</span>
+          <div>
+            <p><strong>Three-Schema Architecture:</strong> Physical level (storage), Logical level (design), View level (user interface). Provides data abstraction and hides complexity.</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="sum-num">4</span>
+          <div>
+            <p><strong>Data Independence:</strong> Physical independence (change storage without affecting logic) is easier. Logical independence (change structure without affecting views) is harder.</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="sum-num">5</span>
+          <div>
+            <p><strong>Database Languages:</strong> DDL (structure), DML (data manipulation), DCL (security/permissions), TCL (transaction control). SQL combines all four.</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="sum-num">6</span>
+          <div>
+            <p><strong>Commit/Rollback:</strong> COMMIT permanently saves transaction changes. ROLLBACK undoes uncommitted changes. Essential for data consistency and error handling.</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="sum-num">7</span>
+          <div>
+            <p><strong>DB Components:</strong> Hardware, Software, People, Data, Procedures. Storage Manager handles disk I/O. Query Processor translates and executes SQL.</p>
+          </div>
+        </div>
+        <div class="summary-item">
+          <span class="sum-num">8</span>
+          <div>
+            <p><strong>System Types:</strong> Centralized (single location), PC (single user), Client/Server (distributed processing), Distributed (multiple locations). Each serves different needs.</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="callout" style="margin-top:2vh">📝 <strong>Expected TU Questions:</strong> "Explain Three-Schema Architecture with a neat diagram." (5 Marks) | "Differentiate between Logical and Physical Data Independence." (4 Marks) | "List and explain database languages." (4 Marks)</div>
   </section>
 
   <!-- SLIDE 21 · THANK YOU -->
   <section class="slide thanks-slide" data-presenter="All Members" data-title="Q&A / Thank You">
     <div class="thanks-wrap">
-      <p class="kicker">Unit 2 · Complete</p>
-      <h2 class="thanks-main">Questions &amp;<br>Discussion?</h2>
-      <p class="thanks-sub">Thank you for listening — the floor is yours.</p>
+      <p class="kicker">Chapter 2 · Complete</p>
+      <h2 class="thanks-main">Questions?</h2>
+      <p class="thanks-sub">Thank you for listening</p>
       <div class="thanks-team">
         <span style="--tc:#0e7490">Santosh</span><span style="--tc:#c2410c">Saurab</span><span style="--tc:#047857">Kiran</span><span style="--tc:#be123c">Roshan</span><span style="--tc:#a16207">Bikash</span><span style="--tc:#7e22ce">Tamlal</span>
       </div>
-      <p class="title-sub">BSc CSIT · 5th Semester · Butwal Multiple Campus · TU</p>
+      <p class="title-sub">BSc CSIT · 4th Semester · Butwal Multiple Campus · TU</p>
     </div>
   </section>
 
