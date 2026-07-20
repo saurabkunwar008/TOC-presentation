@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unit 2 — Physical Layer & Network Media | BSc CSIT · BMC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="progress"><div id="progressBar"></div></div>
+
+<main id="deck">
+
+  <!-- SLIDE 1 · TITLE -->
+  <section class="slide title-slide active" data-presenter="All Members" data-title="Cover">
+    <div class="title-wrap">
+      <p class="badge-row">BSc CSIT · 5th Semester · Computer Networks</p>
+      <div class="unit-block">
+        <span class="unit-label">UNIT</span>
+        <span class="unit-num">02</span>
+      </div>
+      <h1 class="title-main">Physical Layer &amp; Network Media</h1>
+      <p class="title-sub">Tribhuvan University · Butwal Multiple Campus (BMC)</p>
+      <div class="title-team">
+        <span>Santosh</span><span>Saurab</span><span>Kiran</span><span>Roshan</span><span>Bikash</span><span>Tamlal</span>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- SLIDE 2 · TEAM -->
+  <section class="slide" data-presenter="All Members" data-title="Meet the Team">
+    <header class="s-head">
+      <p class="kicker">Group Presentation</p>
+      <h2>Meet the Team</h2>
+      <p class="s-sub">Six presenters · Six parts · One complete unit</p>
+    </header>
+    <div class="team-grid">
+      <article class="member-card" style="--pc:#0e7490">
+        <span class="m-part">Part 1</span>
+        <h3>Santosh Shrestha</h3>
+        <p>Physical Layer — definition, functions &amp; transmission modes</p>
+      </article>
+      <article class="member-card" style="--pc:#c2410c">
+        <span class="m-part">Part 2</span>
+        <h3>Saurab Kunwar</h3>
+        <p>Networking devices — repeater, hub, bridge, switch &amp; router</p>
+      </article>
+      <article class="member-card" style="--pc:#047857">
+        <span class="m-part">Part 3</span>
+        <h3>Kiran Khatriya</h3>
+        <p>Wired media — twisted pair, coaxial, fiber &amp; Ethernet standards</p>
+      </article>
+      <article class="member-card" style="--pc:#be123c">
+        <span class="m-part">Part 4</span>
+        <h3>Roshan Bhusal</h3>
+        <p>Wireless media — radio waves, microwave &amp; infrared</p>
+      </article>
+      <article class="member-card" style="--pc:#a16207">
+        <span class="m-part">Part 5</span>
+        <h3>Bikash Pun</h3>
+        <p>Switching — circuit, message &amp; packet switching</p>
+      </article>
+      <article class="member-card" style="--pc:#7e22ce">
+        <span class="m-part">Part 6</span>
+        <h3>Tamlal Thakur Nau</h3>
+        <p>ISDN, unit summary &amp; TU exam focus</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SLIDE 3 · PART 1 DIVIDER -->
+  <section class="slide divider" data-presenter="Santosh Shrestha" data-title="Part 1 · Santosh Shrestha">
+    <div class="divider-inner" style="--pc:#0e7490">
+      <span class="ghost">01</span>
+      <p class="kicker">Part 1 · Presented by</p>
+      <h2 class="presenter-name">Santosh Shrestha</h2>
+      <p class="divider-topic">Introduction to the Physical Layer</p>
+      <div class="divider-line"></div>
+      <ul class="divider-points">
+        <li>What is the Physical Layer?</li>
+        <li>Core functions</li>
+        <li>Transmission modes</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 4 · WHAT IS PHYSICAL LAYER -->
+  <section class="slide" data-presenter="Santosh Shrestha" data-title="What is the Physical Layer?">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#0e7490">Part 1 · Physical Layer</p>
+      <h2>What is the Physical Layer?</h2>
+    </header>
+    <div class="cols-2">
+      <div class="stack">
+        <div class="panel">
+          <h3>Definition</h3>
+          <p><strong>Layer 1 of the OSI model</strong> — responsible for transmitting <strong>raw bit streams</strong> (0s and 1s) over a physical medium between directly connected devices.</p>
+        </div>
+        <div class="panel">
+          <h3>Key Idea</h3>
+          <p>It deals with <strong>hardware &amp; signals</strong> — voltages, light pulses, radio waves, connectors, cables. It does <strong>not</strong> interpret what the data means.</p>
+        </div>
+        <div class="panel analogy">
+          <h3>💡 Analogy</h3>
+          <p>The Physical Layer is like the <strong>road system</strong>: it moves vehicles (bits) from A to B — it doesn't care what cargo the trucks carry.</p>
+        </div>
+      </div>
+      <div class="panel osi-stack">
+        <p class="panel-tag">OSI Reference Model</p>
+        <div class="osi-l"><b>7</b> Application</div>
+        <div class="osi-l"><b>6</b> Presentation</div>
+        <div class="osi-l"><b>5</b> Session</div>
+        <div class="osi-l"><b>4</b> Transport</div>
+        <div class="osi-l"><b>3</b> Network</div>
+        <div class="osi-l"><b>2</b> Data Link</div>
+        <div class="osi-l hot"><b>1</b> Physical <span class="tag">◀ we start here</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 5 · FUNCTIONS -->
+  <section class="slide" data-presenter="Santosh Shrestha" data-title="Core Functions">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#0e7490">Part 1 · Physical Layer</p>
+      <h2>Core Functions</h2>
+    </header>
+    <div class="func-grid">
+      <div class="func-tile"><span class="f-ico">⚡</span><h3>Bit Representation</h3><p>Encodes bits into electrical, optical or radio signals</p></div>
+      <div class="func-tile"><span class="f-ico">⏱</span><h3>Data Rate</h3><p>Defines transmission speed — bits per second (bps)</p></div>
+      <div class="func-tile"><span class="f-ico">🔄</span><h3>Synchronization</h3><p>Keeps sender &amp; receiver clocks aligned bit-by-bit</p></div>
+      <div class="func-tile"><span class="f-ico">🔗</span><h3>Line Configuration</h3><p>Point-to-point or multipoint link arrangement</p></div>
+      <div class="func-tile"><span class="f-ico">🗺</span><h3>Physical Topology</h3><p>Bus · Star · Ring · Mesh layout of devices</p></div>
+      <div class="func-tile"><span class="f-ico">↔</span><h3>Transmission Mode</h3><p>Simplex · Half-duplex · Full-duplex flow</p></div>
+    </div>
+  </section>
+
+  <!-- SLIDE 6 · TRANSMISSION MODES -->
+  <section class="slide" data-presenter="Santosh Shrestha" data-title="Transmission Modes">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#0e7490">Part 1 · Physical Layer</p>
+      <h2>Transmission Modes</h2>
+    </header>
+    <div class="stack">
+      <div class="mode-row">
+        <div class="mode-diagram"><span class="m-node">A</span><span class="m-wire">──────▶</span><span class="m-node">B</span></div>
+        <div class="mode-info">
+          <h3>Simplex</h3>
+          <p>One-way communication only. The entire channel goes in a single direction.</p>
+          <p class="ex">Examples: Radio broadcast · TV remote · Keyboard → CPU</p>
+        </div>
+      </div>
+      <div class="mode-row">
+        <div class="mode-diagram"><span class="m-node">A</span><span class="m-wire">◀─────▶</span><span class="m-node">B</span></div>
+        <div class="mode-info">
+          <h3>Half-Duplex</h3>
+          <p>Both directions, but <strong>one at a time</strong> — devices take turns transmitting.</p>
+          <p class="ex">Examples: Walkie-talkie · CSMA/CD Ethernet hubs</p>
+        </div>
+      </div>
+      <div class="mode-row">
+        <div class="mode-diagram"><span class="m-node">A</span><span class="m-wire dual">═════▶<br>◀═════</span><span class="m-node">B</span></div>
+        <div class="mode-info">
+          <h3>Full-Duplex</h3>
+          <p>Both directions <strong>simultaneously</strong> — doubles effective throughput.</p>
+          <p class="ex">Examples: Telephone call · Modern switched Ethernet</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 7 · PART 2 DIVIDER -->
+  <section class="slide divider" data-presenter="Saurab Kunwar" data-title="Part 2 · Saurab Kunwar">
+    <div class="divider-inner" style="--pc:#c2410c">
+      <span class="ghost">02</span>
+      <p class="kicker">Part 2 · Presented by</p>
+      <h2 class="presenter-name">Saurab Kunwar</h2>
+      <p class="divider-topic">Physical Layer Networking Devices</p>
+      <div class="divider-line"></div>
+      <ul class="divider-points">
+        <li>Repeater &amp; Hub</li>
+        <li>Bridge &amp; Switch</li>
+        <li>Router</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 8 · DEVICES OVERVIEW -->
+  <section class="slide" data-presenter="Saurab Kunwar" data-title="Devices at a Glance">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#c2410c">Part 2 · Network Devices</p>
+      <h2>Devices at a Glance</h2>
+    </header>
+    <div class="panel tbl-panel">
+      <table class="tbl">
+        <thead><tr><th>Device</th><th>OSI Layer</th><th>Works With</th><th>Main Job</th><th>Intelligence</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Repeater</strong></td><td>L1 · Physical</td><td>Bits</td><td>Regenerates weak signals</td><td>None</td></tr>
+          <tr><td><strong>Hub</strong></td><td>L1 · Physical</td><td>Bits</td><td>Broadcasts to every port</td><td>None</td></tr>
+          <tr><td><strong>Bridge</strong></td><td>L2 · Data Link</td><td>MAC frames</td><td>Filters &amp; segments LANs</td><td>Low</td></tr>
+          <tr><td><strong>Switch</strong></td><td>L2 · Data Link</td><td>MAC frames</td><td>Forwards to the right port</td><td>Medium</td></tr>
+          <tr><td><strong>Router</strong></td><td>L3 · Network</td><td>IP packets</td><td>Routes between networks</td><td>High</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">Lower layers = pure hardware &nbsp;·&nbsp; Higher layers = more intelligence &amp; decision-making</div>
+  </section>
+
+  <!-- SLIDE 9 · REPEATER & HUB -->
+  <section class="slide" data-presenter="Saurab Kunwar" data-title="Repeater & Hub">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#c2410c">Part 2 · Network Devices</p>
+      <h2>Repeater &amp; Hub</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>📡 Repeater — Signal Regenerator</h3>
+        <svg class="diag" viewBox="0 0 320 90">
+          <path class="wave weak" d="M8,45 q10,-14 20,0 q10,14 20,0 q10,-9 20,0 q10,6 20,0"/>
+          <rect class="devbox" x="128" y="28" width="64" height="34" rx="4"/>
+          <text class="devtxt" x="160" y="50" text-anchor="middle">RPT</text>
+          <path class="wave strong" d="M204,45 q10,-30 20,0 q10,30 20,0 q10,-30 20,0 q10,30 20,0"/>
+        </svg>
+        <ul class="pts">
+          <li>Extends cable distance beyond limits (e.g. &gt;100 m UTP)</li>
+          <li>Cleans &amp; retransmits the original bit pattern</li>
+          <li>No filtering — amplifies <strong>noise too</strong></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>🔀 Hub — Multi-port Repeater</h3>
+        <svg class="diag" viewBox="0 0 320 130">
+          <rect class="devbox" x="128" y="18" width="64" height="32" rx="4"/>
+          <text class="devtxt" x="160" y="39" text-anchor="middle">HUB</text>
+          <line class="bcast" x1="160" y1="50" x2="50" y2="100"/>
+          <line class="bcast" x1="160" y1="50" x2="160" y2="100"/>
+          <line class="bcast" x1="160" y1="50" x2="270" y2="100"/>
+          <circle class="pc" cx="50" cy="108" r="13"/><text class="pctxt" x="50" y="112" text-anchor="middle">1</text>
+          <circle class="pc" cx="160" cy="112" r="13"/><text class="pctxt" x="160" y="116" text-anchor="middle">2</text>
+          <circle class="pc" cx="270" cy="108" r="13"/><text class="pctxt" x="270" y="112" text-anchor="middle">3</text>
+        </svg>
+        <ul class="pts">
+          <li>Broadcasts every frame to <strong>ALL ports</strong></li>
+          <li>One shared <strong>collision domain</strong> → collisions &amp; waste</li>
+          <li>Security risk: every device sees all traffic</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 10 · BRIDGE & SWITCH -->
+  <section class="slide" data-presenter="Saurab Kunwar" data-title="Bridge & Switch">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#c2410c">Part 2 · Network Devices</p>
+      <h2>Bridge &amp; Switch</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>🧱 Bridge — Segment Builder</h3>
+        <ul class="pts">
+          <li>Connects <strong>two LAN segments</strong> into one logical LAN</li>
+          <li>Learns which MAC addresses live on each side</li>
+          <li>Forwards only frames that must cross → <strong>less traffic</strong></li>
+          <li>Types: Transparent · Source-Route · Translational</li>
+        </ul>
+        <div class="mini-note">2 collision domains · 1 broadcast domain</div>
+      </div>
+      <div class="panel">
+        <h3>🎯 Switch — Intelligent Forwarder</h3>
+        <table class="tbl mini">
+          <thead><tr><th>Port</th><th>Learned MAC</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td>AA:BB:CC:11:22:33</td></tr>
+            <tr><td>2</td><td>AA:BB:CC:44:55:66</td></tr>
+            <tr><td>3</td><td>AA:BB:CC:77:88:99</td></tr>
+          </tbody>
+        </table>
+        <ul class="pts">
+          <li>Builds a <strong>MAC address table</strong> by learning source addresses</li>
+          <li>Sends frames <strong>only to the destination port</strong></li>
+          <li>Separate collision domain per port · full-duplex</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 11 · ROUTER -->
+  <section class="slide" data-presenter="Saurab Kunwar" data-title="Router">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#c2410c">Part 2 · Network Devices</p>
+      <h2>The Router — Layer 3 Brain</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>Core Functions</h3>
+        <ul class="pts">
+          <li><strong>Path determination</strong> using routing tables &amp; protocols</li>
+          <li>Forwards <strong>IP packets</strong> between different networks</li>
+          <li>Connects LAN ↔ WAN and different media types</li>
+          <li>Supports NAT, firewall filtering, QoS</li>
+          <li>Does <strong>not</strong> forward broadcasts (by default)</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Inside the Routing Table</h3>
+<pre class="code">DESTINATION   MASK          NEXT-HOP      IF
+192.168.1.0   255.255.255.0  —            eth0
+10.0.0.0      255.0.0.0      192.168.1.254 eth1
+0.0.0.0       0.0.0.0        192.168.1.254 eth1  # default</pre>
+        <div class="mini-note">Decision: longest prefix match → forward → decrement TTL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 12 · PART 3 DIVIDER -->
+  <section class="slide divider" data-presenter="Kiran Khatriya" data-title="Part 3 · Kiran Khatriya">
+    <div class="divider-inner" style="--pc:#047857">
+      <span class="ghost">03</span>
+      <p class="kicker">Part 3 · Presented by</p>
+      <h2 class="presenter-name">Kiran Khatriya</h2>
+      <p class="divider-topic">Wired (Guided) Transmission Media</p>
+      <div class="divider-line"></div>
+      <ul class="divider-points">
+        <li>Twisted pair · UTP categories</li>
+        <li>Coaxial cable</li>
+        <li>Fiber optics · Ethernet standards</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 13 · GUIDED MEDIA OVERVIEW -->
+  <section class="slide" data-presenter="Kiran Khatriya" data-title="Guided Media Overview">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#047857">Part 3 · Transmission Media</p>
+      <h2>Guided Media — The Bandwidth Ladder</h2>
+    </header>
+    <div class="stack">
+      <div class="ladder">
+        <div class="lad-row"><span class="lad-name">Twisted Pair</span><div class="lad-bar" style="--w:30%"><span>≤ 10 Gbps · ≤100 m</span></div></div>
+        <div class="lad-row"><span class="lad-name">Coaxial</span><div class="lad-bar" style="--w:52%"><span>≤ 1 Gbps · ≤500 m</span></div></div>
+        <div class="lad-row"><span class="lad-name">Fiber Optic</span><div class="lad-bar" style="--w:96%"><span>Tbps range · km distances</span></div></div>
+      </div>
+      <div class="cols-3">
+        <div class="panel mini-panel"><h3>💰 Cost</h3><p>Twisted pair cheapest → fiber most expensive</p></div>
+        <div class="panel mini-panel"><h3>🛡 Interference</h3><p>UTP most vulnerable → fiber completely immune</p></div>
+        <div class="panel mini-panel"><h3>📏 Distance</h3><p>Copper ~100 m per run → fiber spans kilometres</p></div>
+      </div>
+      <div class="callout">Selection depends on: bandwidth · distance · cost · environment · security</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 14 · TWISTED PAIR -->
+  <section class="slide" data-presenter="Kiran Khatriya" data-title="Twisted Pair Cable">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#047857">Part 3 · Transmission Media</p>
+      <h2>Twisted Pair Cable</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>Structure &amp; the Twist Trick</h3>
+        <svg class="diag" viewBox="0 0 320 100">
+          <path class="tw1" d="M10,50 C35,15 60,85 85,50 S135,15 160,50 S210,85 235,50 S285,15 310,50"/>
+          <path class="tw2" d="M10,50 C35,85 60,15 85,50 S135,85 160,50 S210,15 235,50 S285,85 310,50"/>
+        </svg>
+        <p class="cap">Two insulated copper wires twisted → cancels EMI &amp; crosstalk</p>
+        <div class="chip-row">
+          <span class="chip good">✓ Inexpensive</span>
+          <span class="chip good">✓ Easy to install</span>
+          <span class="chip bad">✗ EMI sensitive</span>
+          <span class="chip bad">✗ 100 m limit</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>UTP vs STP</h3>
+        <table class="tbl mini">
+          <thead><tr><th></th><th>UTP</th><th>STP</th></tr></thead>
+          <tbody>
+            <tr><td>Shielding</td><td>None</td><td>Metal foil / braid</td></tr>
+            <tr><td>Cost</td><td>Lower</td><td>Higher</td></tr>
+            <tr><td>Noise immunity</td><td>Moderate</td><td>High</td></tr>
+            <tr><td>Typical use</td><td>Offices, homes</td><td>Industrial / EMI zones</td></tr>
+          </tbody>
+        </table>
+        <div class="mini-note">Connector: RJ-45 · Most common LAN cable in Nepal &amp; worldwide</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 15 · UTP CATEGORIES -->
+  <section class="slide" data-presenter="Kiran Khatriya" data-title="UTP Categories">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#047857">Part 3 · Transmission Media</p>
+      <h2>UTP Cable Categories</h2>
+    </header>
+    <div class="panel tbl-panel">
+      <table class="tbl">
+        <thead><tr><th>Category</th><th>Frequency</th><th>Max Speed</th><th>Typical Use</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Cat 3</td><td>16 MHz</td><td>10 Mbps</td><td>10BASE-T Ethernet</td><td>Legacy</td></tr>
+          <tr><td>Cat 5</td><td>100 MHz</td><td>100 Mbps</td><td>Fast Ethernet</td><td>Legacy</td></tr>
+          <tr class="hotrow"><td>Cat 5e</td><td>100 MHz</td><td><strong>1 Gbps</strong></td><td>Gigabit LANs</td><td>★ Most common</td></tr>
+          <tr class="hotrow"><td>Cat 6</td><td>250 MHz</td><td><strong>10 Gbps</strong> (55 m)</td><td>Modern offices</td><td>★ Recommended</td></tr>
+          <tr class="hotrow"><td>Cat 6a</td><td>500 MHz</td><td><strong>10 Gbps</strong> (100 m)</td><td>Data centres</td><td>★ Best copper</td></tr>
+          <tr><td>Cat 7</td><td>600 MHz</td><td>10 Gbps+</td><td>Shielded, future-proof</td><td>Emerging</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">🎓 TU exam favourite: Cat 5e = 1 Gbps · Cat 6/6a = 10 Gbps · all limited to ~100 m per run</div>
+  </section>
+
+  <!-- SLIDE 16 · COAX & FIBER -->
+  <section class="slide" data-presenter="Kiran Khatriya" data-title="Coaxial & Fiber Optic">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#047857">Part 3 · Transmission Media</p>
+      <h2>Coaxial &amp; Fiber Optic</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>🔩 Coaxial Cable</h3>
+        <svg class="diag" viewBox="0 0 320 100">
+          <circle class="coax-jacket" cx="70" cy="50" r="38"/>
+          <circle class="coax-shield" cx="70" cy="50" r="28"/>
+          <circle class="coax-insul" cx="70" cy="50" r="17"/>
+          <circle class="coax-core" cx="70" cy="50" r="7"/>
+          <text class="lbl" x="130" y="28">← outer jacket</text>
+          <text class="lbl" x="130" y="46">← braided shield</text>
+          <text class="lbl" x="130" y="64">← insulation</text>
+          <text class="lbl" x="130" y="82">← copper core</text>
+        </svg>
+        <ul class="pts">
+          <li><strong>10BASE2</strong> (thin, 185 m) · <strong>10BASE5</strong> (thick, 500 m)</li>
+          <li>Better shielding than twisted pair</li>
+          <li>Bulky; one break can kill the whole segment</li>
+          <li>Still used in cable TV feeds</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>💡 Fiber Optic Cable</h3>
+        <svg class="diag" viewBox="0 0 320 100">
+          <circle class="fib-jacket" cx="70" cy="50" r="38"/>
+          <circle class="fib-clad" cx="70" cy="50" r="26"/>
+          <circle class="fib-core" cx="70" cy="50" r="12"/>
+          <path class="ray" d="M130,50 L170,25 L210,75 L250,25 L290,75"/>
+          <text class="lbl" x="130" y="16">light zig-zags by total internal reflection →</text>
+        </svg>
+        <table class="tbl mini">
+          <thead><tr><th></th><th>Single-mode</th><th>Multi-mode</th></tr></thead>
+          <tbody>
+            <tr><td>Core</td><td>~9 µm (tiny)</td><td>50–62.5 µm</td></tr>
+            <tr><td>Source</td><td>Laser</td><td>LED</td></tr>
+            <tr><td>Distance</td><td>Kilometres</td><td>≤ ~550 m</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 17 · ETHERNET STANDARDS -->
+  <section class="slide" data-presenter="Kiran Khatriya" data-title="Ethernet Standards">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#047857">Part 3 · Transmission Media</p>
+      <h2>Ethernet Standards (IEEE 802.3)</h2>
+    </header>
+    <div class="panel tbl-panel">
+      <table class="tbl">
+        <thead><tr><th>Standard</th><th>Cable</th><th>Speed</th><th>Max Distance</th></tr></thead>
+        <tbody>
+          <tr><td>10BASE-T</td><td>UTP Cat 3+</td><td>10 Mbps</td><td>100 m</td></tr>
+          <tr><td>100BASE-TX</td><td>UTP Cat 5</td><td>100 Mbps</td><td>100 m</td></tr>
+          <tr><td>1000BASE-T</td><td>Cat 5e / 6</td><td>1 Gbps</td><td>100 m</td></tr>
+          <tr><td>1000BASE-SX</td><td>Multi-mode fiber</td><td>1 Gbps</td><td>550 m</td></tr>
+          <tr><td>1000BASE-LX</td><td>Single-mode fiber</td><td>1 Gbps</td><td>5 km</td></tr>
+          <tr class="hotrow"><td>10GBASE-T</td><td>Cat 6a</td><td>10 Gbps</td><td>100 m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">Decoding the name: <strong>10</strong> = speed (Mbps) · <strong>BASE</strong> = baseband · <strong>T</strong> = twisted pair / <strong>SX·LX</strong> = fiber wavelength</div>
+  </section>
+
+  <!-- SLIDE 18 · PART 4 DIVIDER -->
+  <section class="slide divider" data-presenter="Roshan Bhusal" data-title="Part 4 · Roshan Bhusal">
+    <div class="divider-inner" style="--pc:#be123c">
+      <span class="ghost">04</span>
+      <p class="kicker">Part 4 · Presented by</p>
+      <h2 class="presenter-name">Roshan Bhusal</h2>
+      <p class="divider-topic">Wireless (Unguided) Transmission Media</p>
+      <div class="divider-line"></div>
+      <ul class="divider-points">
+        <li>Radio waves</li>
+        <li>Microwave</li>
+        <li>Infrared</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 19 · UNGUIDED OVERVIEW -->
+  <section class="slide" data-presenter="Roshan Bhusal" data-title="Unguided Media Overview">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#be123c">Part 4 · Wireless Media</p>
+      <h2>The Electromagnetic Spectrum</h2>
+    </header>
+    <div class="stack">
+      <div class="panel">
+        <h3>Unguided = No Physical Path</h3>
+        <p>Signals travel through <strong>air or vacuum</strong> via antennas. Broadcast, mobile and satellite communication all live here.</p>
+      </div>
+      <div class="spectrum">
+        <div class="spec-band" style="--sc:#0e7490"><span>Radio Waves</span><em>3 kHz – 1 GHz</em></div>
+        <div class="spec-band" style="--sc:#be123c"><span>Microwave</span><em>1 – 300 GHz</em></div>
+        <div class="spec-band" style="--sc:#a16207"><span>Infrared</span><em>300 GHz – 400 THz</em></div>
+      </div>
+      <div class="callout">Higher frequency = more bandwidth · but shorter range &amp; weaker wall penetration</div>
+    </div>
+  </section>
+
+  <!-- SLIDE 20 · RADIO & MICROWAVE -->
+  <section class="slide" data-presenter="Roshan Bhusal" data-title="Radio & Microwave">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#be123c">Part 4 · Wireless Media</p>
+      <h2>Radio Waves &amp; Microwave</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>📻 Radio Waves</h3>
+        <ul class="pts">
+          <li><strong>Omnidirectional</strong> — spreads in all directions</li>
+          <li>No line-of-sight needed; <strong>penetrates walls</strong></li>
+          <li>Uses: FM radio · Wi-Fi (2.4/5 GHz) · Bluetooth · cellular</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip good">✓ Wide coverage</span>
+          <span class="chip good">✓ Mobility</span>
+          <span class="chip bad">✗ Interference</span>
+          <span class="chip bad">✗ Security risk</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>📡 Microwave</h3>
+        <ul class="pts">
+          <li><strong>Unidirectional</strong> — strict line-of-sight required</li>
+          <li>High bandwidth; towers must "see" each other</li>
+          <li><strong>Terrestrial:</strong> tower-to-tower backhaul</li>
+          <li><strong>Satellite:</strong> earth station ↔ satellite ↔ earth station</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip good">✓ High data rate</span>
+          <span class="chip good">✓ No cables</span>
+          <span class="chip bad">✗ Rain fade</span>
+          <span class="chip bad">✗ Costly setup</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 21 · INFRARED + COMPARISON -->
+  <section class="slide" data-presenter="Roshan Bhusal" data-title="Infrared + Media Comparison">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#be123c">Part 4 · Wireless Media</p>
+      <h2>Infrared + Guided vs Unguided</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>🔦 Infrared</h3>
+        <ul class="pts">
+          <li>Very short range · strict <strong>line-of-sight</strong></li>
+          <li><strong>Cannot pass through walls</strong> → naturally room-secure</li>
+          <li>Uses: TV remotes · IR keyboards · old phone transfers</li>
+          <li>Low cost, license-free, but easily blocked</li>
+        </ul>
+        <div class="mini-note">Great for secure indoor links · poor for networking</div>
+      </div>
+      <div class="panel tbl-panel">
+        <h3>Head-to-Head</h3>
+        <table class="tbl mini">
+          <thead><tr><th>Criteria</th><th>Guided (wired)</th><th>Unguided (wireless)</th></tr></thead>
+          <tbody>
+            <tr><td>Bandwidth</td><td>Very high (fiber)</td><td>Moderate</td></tr>
+            <tr><td>Distance</td><td>Long (fiber km)</td><td>Limited</td></tr>
+            <tr><td>Interference</td><td>Low (fiber: none)</td><td>High</td></tr>
+            <tr><td>Security</td><td>Higher</td><td>Lower</td></tr>
+            <tr><td>Mobility</td><td>None</td><td>Excellent</td></tr>
+            <tr><td>Install cost</td><td>Cabling labour</td><td>Low per user</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 22 · PART 5 DIVIDER -->
+  <section class="slide divider" data-presenter="Bikash Pun" data-title="Part 5 · Bikash Pun">
+    <div class="divider-inner" style="--pc:#a16207">
+      <span class="ghost">05</span>
+      <p class="kicker">Part 5 · Presented by</p>
+      <h2 class="presenter-name">Bikash Pun</h2>
+      <p class="divider-topic">Switching Techniques</p>
+      <div class="divider-line"></div>
+      <ul class="divider-points">
+        <li>Circuit switching</li>
+        <li>Message switching</li>
+        <li>Packet switching</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 23 · CIRCUIT SWITCHING -->
+  <section class="slide" data-presenter="Bikash Pun" data-title="Circuit Switching">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#a16207">Part 5 · Switching</p>
+      <h2>Circuit Switching</h2>
+    </header>
+    <div class="stack">
+      <div class="panel">
+        <p>A <strong>dedicated end-to-end path</strong> is reserved before any data flows — like booking a private road just for your convoy. Used by the traditional telephone network (PSTN, ISDN).</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-step"><span class="tl-num">1</span><h4>Establish</h4><p>Path reserved end-to-end before transfer</p></div>
+        <div class="tl-arrow">▶</div>
+        <div class="tl-step"><span class="tl-num">2</span><h4>Transfer</h4><p>Data flows at constant rate, fixed delay</p></div>
+        <div class="tl-arrow">▶</div>
+        <div class="tl-step"><span class="tl-num">3</span><h4>Terminate</h4><p>Connection released, resources freed</p></div>
+      </div>
+      <div class="chip-row center">
+        <span class="chip good">✓ Guaranteed QoS</span>
+        <span class="chip good">✓ Ordered delivery</span>
+        <span class="chip good">✓ No congestion mid-call</span>
+        <span class="chip bad">✗ Bandwidth wasted in silence</span>
+        <span class="chip bad">✗ Slow setup</span>
+        <span class="chip bad">✗ Expensive</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 24 · MESSAGE & PACKET -->
+  <section class="slide" data-presenter="Bikash Pun" data-title="Message & Packet Switching">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#a16207">Part 5 · Switching</p>
+      <h2>Message &amp; Packet Switching</h2>
+    </header>
+    <div class="cols-2">
+      <div class="panel">
+        <h3>✉️ Message Switching</h3>
+        <ul class="pts">
+          <li><strong>Store-and-forward:</strong> each node receives the <em>entire</em> message, stores it, then forwards when a link is free</li>
+          <li>No dedicated path needed</li>
+          <li>Example: early email &amp; telegraph systems</li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip good">✓ Efficient sharing</span>
+          <span class="chip bad">✗ Huge storage needed</span>
+          <span class="chip bad">✗ Not real-time</span>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>📦 Packet Switching</h3>
+        <ul class="pts">
+          <li>Message split into small <strong>packets</strong>; each routed independently and reassembled at destination</li>
+          <li><strong>Datagram:</strong> connectionless, per-packet routing (IP)</li>
+          <li><strong>Virtual Circuit:</strong> pre-set logical path (Frame Relay)</li>
+          <li>This is how the <strong>Internet works</strong></li>
+        </ul>
+        <div class="chip-row">
+          <span class="chip good">✓ Very efficient</span>
+          <span class="chip good">✓ Robust — alternate routes</span>
+          <span class="chip bad">✗ Jitter &amp; reordering</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 25 · SWITCHING COMPARISON -->
+  <section class="slide" data-presenter="Bikash Pun" data-title="Switching Comparison">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#a16207">Part 5 · Switching</p>
+      <h2>The Big Comparison 🎯</h2>
+    </header>
+    <div class="panel tbl-panel">
+      <table class="tbl">
+        <thead><tr><th>Feature</th><th>Circuit</th><th>Message</th><th>Packet</th></tr></thead>
+        <tbody>
+          <tr><td>Path</td><td>Dedicated</td><td>None</td><td>Dynamic / virtual</td></tr>
+          <tr><td>Bandwidth</td><td>Fixed &amp; reserved</td><td>Shared</td><td>Shared statistically</td></tr>
+          <tr><td>Delay</td><td>Constant</td><td>High, variable</td><td>Variable (jitter)</td></tr>
+          <tr><td>Storage at nodes</td><td>Not needed</td><td>Very large</td><td>Moderate (queues)</td></tr>
+          <tr><td>Efficiency</td><td>Low</td><td>Medium</td><td><strong>Very high</strong></td></tr>
+          <tr><td>Failure response</td><td>Call drops</td><td>Reroutes</td><td>Packets reroute</td></tr>
+          <tr><td>Classic example</td><td>PSTN / ISDN</td><td>Email, telegraph</td><td><strong>Internet / LAN</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">⚡ 8-mark TU favourite — memorize this table with one example row each</div>
+  </section>
+
+  <!-- SLIDE 26 · PART 6 DIVIDER -->
+  <section class="slide divider" data-presenter="Tamlal Thakur Nau" data-title="Part 6 · Tamlal Thakur Nau">
+    <div class="divider-inner" style="--pc:#7e22ce">
+      <span class="ghost">06</span>
+      <p class="kicker">Part 6 · Presented by</p>
+      <h2 class="presenter-name">Tamlal Thakur Nau</h2>
+      <p class="divider-topic">ISDN &amp; Unit Wrap-Up</p>
+      <div class="divider-line"></div>
+      <ul class="divider-points">
+        <li>ISDN channels &amp; interfaces</li>
+        <li>Unit summary</li>
+        <li>TU exam focus</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SLIDE 27 · ISDN -->
+  <section class="slide" data-presenter="Tamlal Thakur Nau" data-title="ISDN & Channels">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#7e22ce">Part 6 · ISDN</p>
+      <h2>ISDN — Integrated Services Digital Network</h2>
+    </header>
+    <div class="stack">
+      <div class="panel">
+        <p>An <strong>end-to-end digital</strong> telephone network standard carrying <strong>voice + data + video on one line</strong>. Channels: <strong>B</strong> (Bearer — user data, 64 kbps) and <strong>D</strong> (Delta — signaling &amp; control).</p>
+      </div>
+      <div class="panel">
+        <p class="panel-tag">BRI — Basic Rate Interface · Home / SOHO</p>
+        <div class="chan-row">
+          <div class="chan b">B · 64k</div><div class="chan b">B · 64k</div><div class="chan d">D · 16k</div>
+          <span class="total">= 2B + D = 144 kbps</span>
+        </div>
+      </div>
+      <div class="panel">
+        <p class="panel-tag">PRI — Primary Rate Interface · Enterprise</p>
+        <div class="chan-row">
+          <div class="chan b wide">23 × B (64k)</div><div class="chan d">D · 64k</div>
+          <span class="total">= 1.544 Mbps (T1 · US)</span>
+        </div>
+        <div class="chan-row">
+          <div class="chan b wide">30 × B (64k)</div><div class="chan d">D · 64k</div>
+          <span class="total">= 2.048 Mbps (E1 · Europe)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 28 · ISDN REFERENCE POINTS -->
+  <section class="slide" data-presenter="Tamlal Thakur Nau" data-title="ISDN Reference Points">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#7e22ce">Part 6 · ISDN</p>
+      <h2>Reference Points &amp; Standards</h2>
+    </header>
+    <div class="stack">
+      <div class="panel">
+        <p class="panel-tag">How devices connect to ISDN</p>
+        <div class="ref-flow">
+          <span class="ref-node">TE2</span><span class="ref-pt">—R—</span>
+          <span class="ref-node">TA</span><span class="ref-pt">—S—</span>
+          <span class="ref-node">NT2</span><span class="ref-pt">—T—</span>
+          <span class="ref-node">NT1</span><span class="ref-pt">—U—</span>
+          <span class="ref-node net">ISDN Network</span>
+        </div>
+      </div>
+      <div class="cols-2">
+        <div class="panel">
+          <h3>Functional Groups</h3>
+          <ul class="pts">
+            <li><strong>TE1</strong> — ISDN-compatible terminal</li>
+            <li><strong>TE2</strong> — non-ISDN terminal (needs adapter)</li>
+            <li><strong>TA</strong> — Terminal Adapter (TE2 → ISDN)</li>
+            <li><strong>NT1</strong> — connects to the phone line</li>
+            <li><strong>NT2</strong> — PBX / router (switching side)</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>ITU-T I-Series Standards</h3>
+          <ul class="pts">
+            <li><strong>I.100</strong> — general concepts &amp; structure</li>
+            <li><strong>I.400</strong> — user-network interfaces (UNI)</li>
+            <li><strong>I.500</strong> — internetworking</li>
+            <li><strong>I.600</strong> — maintenance principles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLIDE 29 · SUMMARY -->
+  <section class="slide" data-presenter="Tamlal Thakur Nau" data-title="Unit Summary">
+    <header class="s-head">
+      <p class="kicker" style="--pc:#7e22ce">Part 6 · Wrap-Up</p>
+      <h2>Unit 2 — Key Takeaways</h2>
+    </header>
+    <div class="sum-grid">
+      <div class="sum-tile"><span>✓</span><p>Physical layer = <strong>raw bits</strong> over a physical medium (OSI Layer 1)</p></div>
+      <div class="sum-tile"><span>✓</span><p>Repeater/Hub → <strong>L1</strong> · Bridge/Switch → <strong>L2</strong> · Router → <strong>L3</strong></p></div>
+      <div class="sum-tile"><span>✓</span><p>UTP <strong>Cat 5e/6/6a</strong> delivers 1–10 Gbps within 100 m</p></div>
+      <div class="sum-tile"><span>✓</span><p>Fiber: <strong>single-mode</strong> = long haul · <strong>multi-mode</strong> = short runs</p></div>
+      <div class="sum-tile"><span>✓</span><p>Wireless: radio (omni) · microwave (LOS) · infrared (short range)</p></div>
+      <div class="sum-tile"><span>✓</span><p><strong>Packet switching</strong> is the engine of the Internet</p></div>
+      <div class="sum-tile"><span>✓</span><p>ISDN: BRI = <strong>2B+D</strong> · PRI = <strong>23B+D / 30B+D</strong></p></div>
+      <div class="sum-tile"><span>✓</span><p>Media choice = bandwidth · distance · cost · environment</p></div>
+    </div>
+  </section>
+
+ 
+
+  <!-- SLIDE 31 · THANK YOU -->
+  <section class="slide thanks-slide" data-presenter="All Members" data-title="Q&A / Thank You">
+    <div class="thanks-wrap">
+      <p class="kicker">Unit 2 · Complete</p>
+      <h2 class="thanks-main">Questions &amp;<br>Discussion?</h2>
+      <p class="thanks-sub">Thank you for listening — the floor is yours.</p>
+      <div class="thanks-team">
+        <span style="--tc:#0e7490">Santosh</span><span style="--tc:#c2410c">Saurab</span><span style="--tc:#047857">Kiran</span><span style="--tc:#be123c">Roshan</span><span style="--tc:#a16207">Bikash</span><span style="--tc:#7e22ce">Tamlal</span>
+      </div>
+      <p class="title-sub">BSc CSIT · 5th Semester · Butwal Multiple Campus · TU</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="chrome-bottom">
+  <div class="presenter"><span class="p-dot"></span><span id="presenterName">—</span></div>
+  <span id="slideCounter">01 / 31</span>
+  <div class="nav">
+    <button id="btnPrev" title="Previous (←)">◀</button>
+    <button id="btnOv" title="Slide overview (O)">▦</button>
+    <button id="btnFs" title="Fullscreen (F)">⛶</button>
+    <button id="btnNext" title="Next (→)">▶</button>
+  </div>
+</footer>
+
+<div id="overview" class="overview" hidden>
+  <div class="ov-head">
+    <h3>Slide Overview — click to jump</h3>
+    <button id="ovClose">✕ Close (Esc)</button>
+  </div>
+  <div class="ov-grid" id="ovGrid"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
