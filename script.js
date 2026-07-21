@@ -77,6 +77,7 @@
       case 'Home': go(0); break;
       case 'End':  go(total - 1); break;
       case 'o': case 'O': toggleOverview(); break;
+      case 'p': case 'P': window.print(); break;
       case 'f': case 'F': toggleFS(); break;
       case 'Escape': toggleOverview(false); break;
     }
@@ -104,3 +105,8 @@
   buildOverview();
   go(0);
 })();
+
+
+
+
+

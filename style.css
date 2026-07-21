@@ -853,3 +853,167 @@ button { font-family: inherit; cursor: pointer; border: none; outline: none; }
   .unit-num { font-size: 80px; }
   .presenter-name { font-size: 36px; }
 }
+
+
+
+
+
+
+/* ══════════════════════════════════════
+   PRINT / PDF EXPORT STYLES
+   ══════════════════════════════════════ */
+@media print {
+  /* Hide navigation, progress bar, and overview modal */
+  .chrome-bottom, .progress, #overview {
+    display: none !important;
+  }
+
+  /* Force all slides to be visible, stacked, and paginated */
+  .slide {
+    display: flex !important;
+    position: relative !important;
+    height: 100vh !important;
+    min-height: 297mm; /* A4 height */
+    page-break-after: always !important;
+    break-after: page !important;
+    opacity: 1 !important;
+    transform: none !important;
+    overflow: hidden !important;
+    padding: 30px 40px !important;
+  }
+
+  /* Prevent a blank page at the end */
+  .slide:last-child {
+    page-break-after: auto !important;
+    break-after: auto !important;
+  }
+
+  /* CRITICAL: Force browser to print background colors and graphics */
+  body, .slide, .info-box, .comp-col, .arch-level, .lang-card, 
+  .env-item, .type-card, .class-box, .summary-item, .member-card-compact,
+  .intro-box, .example-box, .mini-example, .code-example, .code-snippet {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+
+  /* Adjust fonts slightly for print clarity if needed */
+  .ghost { opacity: 0.1 !important; }
+}
+
+
+
+/* ══════════════════════════════════════
+   SCHEMA DIAGRAM STYLES (COMPACT)
+   ══════════════════════════════════════ */
+.schema-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0;
+  padding: 8px;
+  background: var(--surface);
+  border-radius: 6px;
+}
+
+.schema-level {
+  width: 100%;
+  max-width: 240px;
+  padding: 6px 10px;
+  border: 2px solid;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.level-label {
+  font-size: 12px;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.level-name {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.schema-level.database {
+  background: #f8fafc;
+  border-style: dashed;
+}
+
+.arrow-down {
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: bold;
+  line-height: 1;
+  margin: 1px 0;
+}
+
+.independence-arrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+  margin: 2px 0;
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 4px;
+}
+
+.arrow-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--arrow-color, #047857);
+  text-align: center;
+  line-height: 1.1;
+}
+
+.arrow-line {
+  font-size: 18px;
+  color: var(--arrow-color, #047857);
+  font-weight: bold;
+}
+
+/* Make the info boxes more compact */
+.info-box.highlight-box {
+  padding: 12px;
+}
+
+.info-box.highlight-box h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.info-box.highlight-box .definition {
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.info-box.highlight-box .compact-list {
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+.info-box.highlight-box .compact-list li {
+  padding: 3px 0 3px 16px;
+  font-size: 12px;
+}
+
+.info-box.highlight-box .mini-example {
+  font-size: 11px;
+  padding: 6px 8px;
+  margin: 6px 0;
+}
+
+.info-box.highlight-box .difficulty {
+  font-size: 11px;
+  padding: 6px 8px;
+  margin-top: 6px;
+}

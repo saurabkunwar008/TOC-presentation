@@ -219,48 +219,100 @@
     </div>
   </section>
 
-  <!-- SLIDE 8 · DATA INDEPENDENCE -->
-  <section class="slide" data-presenter="Saurab Kunwar" data-title="Data Independence">
-    <header class="s-head">
-      <p class="kicker" style="--pc:#c2410c">Part 2 · Independence</p>
-      <h2>Data Independence</h2>
-    </header>
-    <div class="content-compact">
-      <div class="intro-box">
-        <p><strong>Why Data Independence Matters:</strong> Data independence is the ability to change the schema at one level without having to change the schema at the next higher level. This protects applications from changes in data storage or structure.</p>
-      </div>
-      <div class="two-col-grid">
-        <div class="info-box highlight-box">
-          <h3>🔧 Physical Data Independence</h3>
-          <p class="definition"><strong>Definition:</strong> The capacity to change the physical schema (how data is stored) without having to change the conceptual schema (logical structure) or application programs.</p>
-          <p><strong>What can be changed:</strong></p>
-          <ul class="compact-list">
-            <li>Switch from HDD to SSD storage</li>
-            <li>Create new indexes for faster queries</li>
-            <li>Change file organization (heap to sorted)</li>
-            <li>Modify data compression methods</li>
-            <li>Change block size or buffer size</li>
-          </ul>
-          <div class="mini-example"><strong>Example:</strong> Adding a B+ tree index on Student.Name to speed up name searches doesn't require changing any application code or logical structure. The database just becomes faster.</div>
-          <p class="difficulty"><strong>Difficulty:</strong> ✅ Easier to achieve (physical changes don't affect logic)</p>
-        </div>
-        <div class="info-box highlight-box">
-          <h3>📐 Logical Data Independence</h3>
-          <p class="definition"><strong>Definition:</strong> The capacity to change the conceptual schema (logical structure) without having to change external schemas (user views) or application programs.</p>
-          <p><strong>What can be changed:</strong></p>
-          <ul class="compact-list">
-            <li>Add new entities or tables</li>
-            <li>Add new attributes to existing entities</li>
-            <li>Modify relationships between entities</li>
-            <li>Change data types or constraints</li>
-            <li>Split or merge tables (with care)</li>
-          </ul>
-          <div class="mini-example"><strong>Example:</strong> Adding an 'Email' field to the Student table doesn't break existing applications that query Student data. They continue working, just ignoring the new field.</div>
-          <p class="difficulty"><strong>Difficulty:</strong> ⚠️ Harder to achieve (structural changes may affect views)</p>
-        </div>
-      </div>
+
+
+
+
+<!-- SLIDE 8 · DATA INDEPENDENCE -->
+<section class="slide" data-presenter="Saurab Kunwar" data-title="Data Independence">
+  <header class="s-head">
+    <p class="kicker" style="--pc:#c2410c">Part 2 · Independence</p>
+    <h2>Data Independence</h2>
+  </header>
+  <div class="content-compact">
+    <div class="intro-box">
+      <p><strong>Why Data Independence Matters:</strong> The ability to change schema at one level without affecting the next higher level.</p>
     </div>
-  </section>
+    <div class="two-col-grid">
+      
+      <!-- LOGICAL DATA INDEPENDENCE (FIRST) -->
+      <div class="info-box highlight-box">
+        <h3>📐 Logical Data Independence</h3>
+        <p class="definition">Change conceptual schema without changing external schemas or applications.</p>
+        
+        <!-- Visual Diagram -->
+        <div class="schema-diagram">
+          <div class="schema-level" style="border-color: #7e22ce; background: #faf5ff;">
+            <span class="level-label">View Level</span>
+          </div>
+          <div class="independence-arrow" style="--arrow-color: #c2410c;">
+            <span class="arrow-label">Logical<br>Independence</span>
+            <span class="arrow-line">↕</span>
+          </div>
+          <div class="schema-level" style="border-color: #c2410c; background: #fff7ed;">
+            <span class="level-label">Conceptual Schema</span>
+          </div>
+          <div class="arrow-down">↓</div>
+          <div class="schema-level" style="border-color: #0e7490; background: #f0f9ff;">
+            <span class="level-label">Physical Schema</span>
+          </div>
+        </div>
+        
+        <ul class="compact-list">
+          <li>Add new tables or attributes</li>
+          <li>Modify relationships</li>
+          <li>Change constraints</li>
+        </ul>
+        <div class="mini-example"><strong>Example:</strong> Adding 'Email' field doesn't break existing apps</div>
+        <p class="difficulty"><strong>Difficulty:</strong> ⚠️ Harder to achieve</p>
+      </div>
+
+      <!-- PHYSICAL DATA INDEPENDENCE (SECOND) -->
+      <div class="info-box highlight-box">
+        <h3>🔧 Physical Data Independence</h3>
+        <p class="definition">Change physical schema without changing conceptual schema or applications.</p>
+        
+        <!-- Visual Diagram -->
+        <div class="schema-diagram">
+          <div class="schema-level" style="border-color: #7e22ce; background: #faf5ff;">
+            <span class="level-label">View Level</span>
+          </div>
+          <div class="arrow-down">↓</div>
+          <div class="schema-level" style="border-color: #c2410c; background: #fff7ed;">
+            <span class="level-label">Conceptual Schema</span>
+          </div>
+          <div class="independence-arrow" style="--arrow-color: #0e7490;">
+            <span class="arrow-label">Physical<br>Independence</span>
+            <span class="arrow-line">⇅</span>
+          </div>
+          <div class="schema-level" style="border-color: #0e7490; background: #f0f9ff;">
+            <span class="level-label">Physical Schema</span>
+          </div>
+          <div class="arrow-down">↓</div>
+          <div class="schema-level database" style="border-color: #475569;">
+            <span class="level-label">Database</span>
+          </div>
+        </div>
+        
+        <ul class="compact-list">
+          <li>Switch HDD to SSD</li>
+          <li>Create indexes</li>
+          <li>Change file organization</li>
+        </ul>
+        <div class="mini-example"><strong>Example:</strong> Adding index speeds up queries without code changes</div>
+        <p class="difficulty"><strong>Difficulty:</strong> ✅ Easier to achieve</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  
 
   <!-- SLIDE 9 · PART 3 DIVIDER -->
   <section class="slide divider" data-presenter="Kiran Kathariya" data-title="Part 3 · Kiran Kathariya">
@@ -720,12 +772,18 @@
 <footer class="chrome-bottom">
   <div class="presenter"><span class="p-dot"></span><span id="presenterName">—</span></div>
   <span id="slideCounter">01 / 21</span>
+
+
+  
   <div class="nav">
     <button id="btnPrev" title="Previous (←)">◀</button>
     <button id="btnOv" title="Slide overview (O)">▦</button>
     <button id="btnFs" title="Fullscreen (F)">⛶</button>
     <button id="btnNext" title="Next (→)">▶</button>
   </div>
+
+
+
 </footer>
 
 <div id="overview" class="overview" hidden>
